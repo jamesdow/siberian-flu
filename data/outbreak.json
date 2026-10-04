@@ -1,0 +1,165 @@
+{
+  "updated": "2026-10-04",
+  "title": "Irkutsk Plague Watch",
+  "eyebrow": "Siberia · Yersinia pestis · laboratory incident",
+  "pathogen": "Yersinia pestis",
+  "pathogen_note": "PROVISIONAL placeholder data for layout testing. Plague is caused by a bacterium, not a virus, and responds to antibiotics when treated early.",
+  "status": "watching",
+  "status_note": "One laboratory worker has died. About two hundred contacts are under observation and no further case has been confirmed.",
+  "counts": {
+    "deaths": 1,
+    "confirmed": 1,
+    "suspected": 0,
+    "under_observation": 189,
+    "hospitalized": 1,
+    "as_of": "2026-10-03",
+    "symptomatic": 0
+  },
+  "series": [
+    {
+      "date": "2026-09-25",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 0,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "note": "Test tube with live material broken in the laboratory.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-09-26",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 0,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-09-27",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 0,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-09-28",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 1,
+      "note": "Worker hospitalised.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-09-29",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 1,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-09-30",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 1,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-10-01",
+      "deaths": 0,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 1,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-10-02",
+      "deaths": 1,
+      "confirmed": 1,
+      "suspected": 0,
+      "under_observation": 150,
+      "hospitalized": 1,
+      "note": "Worker dies; contacts placed under observation.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-10-03",
+      "deaths": 1,
+      "confirmed": 1,
+      "suspected": 0,
+      "under_observation": 189,
+      "hospitalized": 1,
+      "note": "Observation list grows after contact tracing.",
+      "symptomatic": 0
+    },
+    {
+      "date": "2026-10-04",
+      "deaths": 1,
+      "confirmed": 1,
+      "suspected": 0,
+      "under_observation": 189,
+      "hospitalized": 1,
+      "note": "No new figure; carried forward.",
+      "symptomatic": 0
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-09-25",
+      "text": "Placeholder event.",
+      "source_name": "Example",
+      "source_url": "https://example.com"
+    }
+  ],
+  "headlines": [
+    {
+      "date": "2026-10-04",
+      "source": "Euronews",
+      "title": "Placeholder headline for layout testing only",
+      "url": "https://example.com",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-02",
+      "source": "The Moscow Times",
+      "title": "Nearly 200 People Under Observation After Irkutsk Lab Worker Dies From Plague",
+      "url": "https://example.com",
+      "tone": "sober"
+    }
+  ],
+  "context": [
+    {
+      "text": "Placeholder context.",
+      "source_name": "WHO",
+      "source_url": "https://example.com"
+    }
+  ],
+  "watch": [
+    "Any confirmed case among the contacts under observation",
+    "The observation window ending"
+  ],
+  "unknowns": [
+    "Exact date of symptom onset"
+  ],
+  "sources": [
+    {
+      "name": "Rospotrebnadzor",
+      "url": "https://rospotrebnadzor.ru",
+      "tier": "official"
+    }
+  ]
+}

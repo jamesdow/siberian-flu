@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A calm daily tracker of the Irkutsk plague laboratory incident: counts, headlines, timeline.">
+<title>Irkutsk Plague Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a 12-column Swiss modular grid. Hairline rules carry the structure, type is flush-left
+     and ragged-right, one red is spent on a single mark and the latest data point. Nothing else is decorated. */
+  :root {
+    --paper: #ffffff;
+    --ink: #101112;
+    --ink-2: #4e5256;
+    --ink-3: #86898d;
+    --rule: #d6d8da;
+    --rule-soft: #ebecee;
+    --wash: #f4f4f3;
+    --red: #d7261d;
+    --mark-ring: #ffffff;
+    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --gutter: clamp(16px, 4vw, 48px);
+    --col-gap: 24px;
+    --measure: 62ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0f1011; --ink: #f2f2ef; --ink-2: #b3b6b9; --ink-3: #7d8084;
+      --rule: #2a2c2e; --rule-soft: #1d1f20; --wash: #161718; --red: #ff5a4f; --mark-ring: #0f1011;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0f1011; --ink: #f2f2ef; --ink-2: #b3b6b9; --ink-3: #7d8084;
+    --rule: #2a2c2e; --rule-soft: #1d1f20; --wash: #161718; --red: #ff5a4f; --mark-ring: #0f1011;
+    color-scheme: dark;
+  }
+
+  html { height: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 15px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv05";
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  h1, h2, h3, p, ul, ol, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+  [hidden] { display: none !important; }
+
+  .page { padding-inline: var(--gutter); padding-block: 28px 56px; max-width: 1280px; margin-inline: auto; }
+
+  /* Small type roles */
+  .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .muted { color: var(--ink-3); }
+  .sq { display: inline-block; width: 9px; height: 9px; background: var(--ink); vertical-align: 0; flex: none; }
+  .sq.hollow { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .sq.red { background: var(--red); }
+
+  /* Masthead */
+  .mast { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 20px; align-items: end; padding-bottom: 20px; border-bottom: 1.5px solid var(--ink); }
+  .mast-left { grid-column: 1 / span 8; min-width: 0; }
+  .mast-right { grid-column: 9 / span 4; min-width: 0; display: grid; gap: 4px; justify-items: start; }
+  .mast-right .status { margin-bottom: 6px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .mast h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 0.96; font-weight: 600; letter-spacing: -0.035em; font-stretch: 92%; text-wrap: balance; }
+  .status { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; }
+  .status .sq { width: 12px; height: 12px; }
+  .status-sub { font-size: 13px; color: var(--ink-2); max-width: 36ch; }
+  @media (min-width: 761px) { .mast-right { justify-items: end; text-align: right; } .status-sub { max-width: 40ch; } }
+
+  /* KPI band */
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--rule); }
+  .kpi { padding: 22px 20px 20px 0; border-left: 1px solid var(--rule); padding-left: 20px; min-width: 0; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; }
+  .kpi:first-child { border-left: 0; padding-left: 0; }
+  .kpi-value { font-size: clamp(44px, 5vw, 64px); line-height: 1; font-weight: 500; letter-spacing: -0.04em; font-stretch: 88%; }
+  .kpi-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .kpi-delta { font-size: 12.5px; color: var(--ink-2); line-height: 1.3; }
+  .kpi-delta b { font-weight: 600; color: var(--ink); }
+  .spark { width: 72px; height: 26px; flex: none; overflow: visible; }
+  .spark .line { fill: none; stroke: var(--ink-3); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+  .spark .end { fill: var(--red); stroke: var(--mark-ring); stroke-width: 2; }
+
+  /* Main: chart + rail */
+  .main { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 32px; padding-block: 28px 32px; border-bottom: 1px solid var(--rule); }
+  .chart-wrap { grid-column: 1 / span 8; min-width: 0; }
+  .rail { grid-column: 9 / span 4; min-width: 0; display: grid; gap: 28px; align-content: start; }
+  .chart-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .chart-title { font-size: 15px; font-weight: 500; }
+  .chart-title span { color: var(--ink-3); font-weight: 400; }
+  .chart { position: relative; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .chart .grid line { stroke: var(--rule-soft); stroke-width: 1; }
+  .chart .axis line { stroke: var(--rule); stroke-width: 1; }
+  .chart text { font-family: var(--mono); font-size: 11px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .chart .area { fill: var(--ink); fill-opacity: 0.07; }
+  .chart .line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .chart .end { fill: var(--red); stroke: var(--mark-ring); stroke-width: 2; }
+  .chart .end-label { font-family: var(--sans); font-size: 13px; font-weight: 600; fill: var(--ink); }
+  .chart .cross line { stroke: var(--ink); stroke-width: 1; }
+  .chart .cross circle { fill: var(--ink); stroke: var(--mark-ring); stroke-width: 2; }
+  .chart .hit { fill: transparent; cursor: crosshair; }
+  .tip { position: absolute; top: 0; left: 0; pointer-events: none; background: var(--paper); border: 1px solid var(--ink); padding: 10px 12px; min-width: 190px; max-width: 260px; font-size: 12.5px; line-height: 1.4; z-index: 2; }
+  .tip .tip-date { font-family: var(--mono); font-size: 11px; color: var(--ink-2); margin-bottom: 6px; }
+  .tip .row { display: flex; justify-content: space-between; gap: 14px; }
+  .tip .row b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tip .row span { color: var(--ink-2); }
+  .tip .note { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--rule); color: var(--ink-2); }
+
+  .lede { font-size: 19px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 400; text-wrap: pretty; }
+  .pathogen { font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+  .rail h2 { margin-bottom: 12px; }
+  .todo li { display: grid; grid-template-columns: 9px 1fr; gap: 12px; align-items: start; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 14px; line-height: 1.4; }
+  .todo li:last-child { border-bottom: 1px solid var(--rule); }
+  .todo .sq { margin-top: 6px; }
+  .todo li.done { color: var(--ink-3); }
+
+  /* Sections with a narrow label column */
+  .sec { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 16px; padding-block: 28px; border-bottom: 1px solid var(--rule); }
+  .sec-label { grid-column: 1 / span 3; min-width: 0; }
+  .sec-label h2 { font-size: 15px; font-weight: 500; }
+  .sec-label p { font-size: 13px; color: var(--ink-2); margin-top: 6px; max-width: 28ch; }
+  .sec-body { grid-column: 4 / span 9; min-width: 0; }
+  .sec-body.narrow { grid-column: 4 / span 7; }
+
+  /* Daily log table */
+  .log { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .log th { text-align: left; font-weight: 500; padding: 0 12px 8px 0; border-bottom: 1px solid var(--ink); }
+  .log th.num, .log td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .log td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .log td:last-child, .log th:last-child { padding-right: 0; }
+  .log td.date { white-space: nowrap; }
+  .log td.note { color: var(--ink-2); font-size: 13px; }
+  .log tr.today td { font-weight: 500; }
+  .log tr.today td.note { font-weight: 400; }
+  .log .num.changed { font-weight: 600; }
+  .log-wrap { overflow-x: auto; }
+
+  /* Headlines */
+  .heads li { display: grid; grid-template-columns: 7.5em 8.5em 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .heads li:first-child { border-top: 1px solid var(--ink); }
+  .heads .source { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+  .heads .title { font-size: 16px; line-height: 1.35; letter-spacing: -0.005em; text-wrap: pretty; }
+  .heads .title a::after { content: "\2197"; font-size: 0.75em; margin-left: 0.4em; color: var(--ink-3); text-decoration: none; display: inline-block; }
+
+  /* Timeline + context */
+  .tl li { display: grid; grid-template-columns: 7.5em 9px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; line-height: 1.45; }
+  .tl li:first-child { border-top: 1px solid var(--ink); }
+  .tl .sq { margin-top: 7px; }
+  .tl .src { display: block; font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+  .ctx li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; line-height: 1.45; max-width: var(--measure); }
+  .ctx li:first-child { border-top: 1px solid var(--ink); }
+  .ctx .src { display: block; font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+  .two { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 28px; padding-block: 28px; border-bottom: 1px solid var(--rule); }
+  .two > div { min-width: 0; }
+  .two .a { grid-column: 1 / span 6; }
+  .two .b { grid-column: 7 / span 6; }
+  .two h2 { font-size: 15px; font-weight: 500; margin-bottom: 12px; }
+
+  /* Footer */
+  .foot { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 24px; padding-top: 28px; font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+  .foot > div { min-width: 0; }
+  .foot .f1 { grid-column: 1 / span 3; }
+  .foot .f2 { grid-column: 4 / span 4; }
+  .foot .f3 { grid-column: 8 / span 5; }
+  .foot h2 { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--ink-2); margin-bottom: 8px; }
+  .foot li { padding: 3px 0; }
+  .foot .tier { color: var(--ink-3); }
+  .foot p + p { margin-top: 8px; }
+
+  @media (max-width: 960px) {
+    .chart-wrap { grid-column: 1 / -1; }
+    .rail { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px var(--col-gap); }
+    .rail .rail-top { grid-column: 1 / -1; }
+    .sec-label { grid-column: 1 / -1; }
+    .sec-body, .sec-body.narrow { grid-column: 1 / -1; }
+    .foot .f1 { grid-column: 1 / span 4; } .foot .f2 { grid-column: 5 / span 8; } .foot .f3 { grid-column: 1 / -1; }
+  }
+  @media (max-width: 760px) {
+    body { font-size: 14.5px; }
+    .page { padding-block: 20px 48px; }
+    .mast-left, .mast-right { grid-column: 1 / -1; }
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kpi { padding: 18px 16px 16px 0; }
+    .kpi:nth-child(odd) { border-left: 0; padding-left: 0; }
+    .kpi:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .kpi:nth-child(even) { padding-left: 16px; padding-right: 0; }
+    .kpi-value { font-size: 40px; }
+    .rail { grid-template-columns: 1fr; }
+    .heads li { grid-template-columns: 1fr; gap: 4px; }
+    .heads .meta-row { display: flex; gap: 12px; align-items: baseline; }
+    .tl li { grid-template-columns: 9px 1fr; }
+    .tl .date { grid-column: 2; }
+    .tl .sq { grid-row: 1 / span 2; }
+    .two .a, .two .b { grid-column: 1 / -1; }
+    .foot .f1, .foot .f2, .foot .f3 { grid-column: 1 / -1; }
+    .log thead { display: none; }
+    .log, .log tbody { display: block; }
+    .log tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+    .log tr:first-child { border-top: 1px solid var(--ink); }
+    .log td { display: inline; padding: 0; border: 0; }
+    .log td.date { display: block; margin-bottom: 4px; }
+    .log td.num { display: inline-block; margin-right: 14px; text-align: left; font-size: 13px; }
+    .log td.num::before { content: attr(data-label); color: var(--ink-3); margin-right: 5px; font-weight: 400; }
+    .log td.note { display: block; margin-top: 4px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .heads li, .tl li, .todo li { transition: background-color 120ms ease; }
+  }
+  .heads li:hover, .tl li:hover { background: var(--wash); box-shadow: 0 0 0 8px var(--wash); }
+</style>
+</head>
+<body>
+<main class="page" id="app">
+  <header class="mast">
+    <div class="mast-left">
+      <div class="eyebrow"><span class="sq red" aria-hidden="true"></span><span class="label" id="eyebrow">Siberia · Yersinia pestis · laboratory incident</span></div>
+      <h1 id="title">Irkutsk Plague Watch</h1>
+    </div>
+    <div class="mast-right">
+      <div class="status" id="status"><span class="sq" aria-hidden="true"></span><span id="status-word">Watching</span></div>
+      <div class="mono" id="updated"></div>
+      <div class="mono" id="asof" hidden></div>
+      <div class="status-sub" id="day-count"></div>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Key counts"></section>
+
+  <section class="main">
+    <div class="chart-wrap">
+      <div class="chart-head">
+        <div class="chart-title">Contacts under medical observation <span id="chart-range"></span></div>
+        <div class="mono" id="chart-asof"></div>
+      </div>
+      <figure class="chart" id="chart" tabindex="0" aria-label="Daily count of contacts under medical observation. Use arrow keys to move between days."></figure>
+    </div>
+    <aside class="rail">
+      <div class="rail-top">
+        <p class="lede" id="status-note"></p>
+        <p class="pathogen" id="pathogen-note" style="margin-top:14px"></p>
+      </div>
+      <div>
+        <h2 class="label">Watching for</h2>
+        <ul class="todo" id="watch"></ul>
+      </div>
+      <div>
+        <h2 class="label">Not yet known</h2>
+        <ul class="todo" id="unknowns"></ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="sec">
+    <div class="sec-label"><h2>Daily log</h2><p>Latest official figures reported each day. Bold marks a change from the day before.</p></div>
+    <div class="sec-body log-wrap">
+      <table class="log" id="log">
+        <thead><tr><th>Date</th><th class="num">Observed</th><th class="num">Symptoms</th><th class="num">Confirmed</th><th class="num">Deaths</th><th>Note</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-label"><h2>Headlines</h2><p id="heads-sub">Titles as published. Measured outlets first, two per outlet at most.</p></div>
+    <div class="sec-body"><ol class="heads" id="heads"></ol></div>
+  </section>
+
+  <section class="two">
+    <div class="a"><h2>Timeline</h2><ol class="tl" id="timeline"></ol></div>
+    <div class="b"><h2>What this is</h2><ul class="ctx" id="context"></ul></div>
+  </section>
+
+  <footer class="foot">
+    <div class="f1"><h2>Sources</h2><ul id="sources"></ul></div>
+    <div class="f2"><h2>How this is kept</h2><p id="method-note">Counts are the most recent figures from Rospotrebnadzor and the Irkutsk regional government, as reported by the outlets listed. Where a day has no new figure, the last one is carried forward and the log says so.</p><p>Headlines are quoted exactly as published. Outlets that trade in alarm are left out.</p></div>
+    <div class="f3"><h2>Update</h2><p id="update-note"></p><p class="muted" id="colophon"></p></div>
+  </footer>
+</main>
+
+<script id="outbreak-data" type="application/json">{"updated":"2026-10-04","title":"Irkutsk Plague Watch","eyebrow":"Siberia · Yersinia pestis · laboratory incident","pathogen":"Yersinia pestis","pathogen_note":"PROVISIONAL placeholder data for layout testing. Plague is caused by a bacterium, not a virus, and responds to antibiotics when treated early.","status":"watching","status_note":"One laboratory worker has died. About two hundred contacts are under observation and no further case has been confirmed.","counts":{"deaths":1,"confirmed":1,"suspected":0,"under_observation":189,"hospitalized":1,"as_of":"2026-10-03","symptomatic":0},"series":[{"date":"2026-09-25","deaths":0,"confirmed":0,"suspected":0,"under_observation":0,"hospitalized":0,"note":"Test tube with live material broken in the laboratory.","symptomatic":0},{"date":"2026-09-26","deaths":0,"confirmed":0,"suspected":0,"under_observation":0,"hospitalized":0,"note":"No new figure; carried forward.","symptomatic":0},{"date":"2026-09-27","deaths":0,"confirmed":0,"suspected":0,"under_observation":0,"hospitalized":0,"note":"No new figure; carried forward.","symptomatic":0},{"date":"2026-09-28","deaths":0,"confirmed":0,"suspected":1,"under_observation":0,"hospitalized":1,"note":"Worker hospitalised.","symptomatic":0},{"date":"2026-09-29","deaths":0,"confirmed":0,"suspected":1,"under_observation":0,"hospitalized":1,"note":"No new figure; carried forward.","symptomatic":0},{"date":"2026-09-30","deaths":0,"confirmed":0,"suspected":1,"under_observation":0,"hospitalized":1,"note":"No new figure; carried forward.","symptomatic":0},{"date":"2026-10-01","deaths":0,"confirmed":0,"suspected":1,"under_observation":0,"hospitalized":1,"note":"No new figure; carried forward.","symptomatic":0},{"date":"2026-10-02","deaths":1,"confirmed":1,"suspected":0,"under_observation":150,"hospitalized":1,"note":"Worker dies; contacts placed under observation.","symptomatic":0},{"date":"2026-10-03","deaths":1,"confirmed":1,"suspected":0,"under_observation":189,"hospitalized":1,"note":"Observation list grows after contact tracing.","symptomatic":0},{"date":"2026-10-04","deaths":1,"confirmed":1,"suspected":0,"under_observation":189,"hospitalized":1,"note":"No new figure; carried forward.","symptomatic":0}],"timeline":[{"date":"2026-09-25","text":"Placeholder event.","source_name":"Example","source_url":"https://example.com"}],"headlines":[{"date":"2026-10-04","source":"Euronews","title":"Placeholder headline for layout testing only","url":"https://example.com","tone":"neutral"},{"date":"2026-10-02","source":"The Moscow Times","title":"Nearly 200 People Under Observation After Irkutsk Lab Worker Dies From Plague","url":"https://example.com","tone":"sober"}],"context":[{"text":"Placeholder context.","source_name":"WHO","source_url":"https://example.com"}],"watch":["Any confirmed case among the contacts under observation","The observation window ending"],"unknowns":["Exact date of symptom onset"],"sources":[{"name":"Rospotrebnadzor","url":"https://rospotrebnadzor.ru","tier":"official"}]}</script>
+<script>
+(function () {
+  'use strict';
+  var raw = document.getElementById('outbreak-data').textContent;
+  var D;
+  try { D = JSON.parse(raw); } catch (e) { D = null; }
+  if (!D) { document.getElementById('status-note').textContent = 'Data file could not be read.'; return; }
+
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function parse(iso) { var p = String(iso).split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function fmt(iso, withYear) { var d = parse(iso); return d.getUTCDate() + ' ' + MON[d.getUTCMonth()] + (withYear ? ' ' + d.getUTCFullYear() : ''); }
+  function days(a, b) { return Math.round((parse(b) - parse(a)) / 86400000); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined && text !== null) e.textContent = text; return e; }
+  function svgEl(tag, attrs) { var e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function num(n) { return (n === undefined || n === null) ? '–' : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function host(url) { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return ''; } }
+  function strOrText(x) { return typeof x === 'string' ? { text: x, done: false } : x; }
+
+  var series = (D.series || []).slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+  var last = series[series.length - 1] || {};
+  var prev = series[series.length - 2] || null;
+  var counts = D.counts || last;
+
+  // Masthead
+  if (D.title) { document.getElementById('title').textContent = D.title; document.title = D.title; }
+  if (D.eyebrow) document.getElementById('eyebrow').textContent = D.eyebrow;
+  var statusWords = { watching: 'Watching', contained: 'Contained', spreading: 'Spreading', resolved: 'Resolved' };
+  var st = D.status || 'watching';
+  document.getElementById('status-word').textContent = statusWords[st] || st;
+  var stSq = document.querySelector('#status .sq');
+  stSq.className = 'sq' + (st === 'spreading' ? ' red' : (st === 'contained' || st === 'resolved') ? ' hollow' : '');
+  document.getElementById('updated').textContent = 'Updated ' + fmt(D.updated, true);
+  if (counts.as_of && counts.as_of !== D.updated) { var asofEl = document.getElementById('asof'); asofEl.textContent = 'Figures as of ' + fmt(counts.as_of); asofEl.hidden = false; }
+  if (series.length) {
+    var since = days(series[0].date, D.updated);
+    document.getElementById('day-count').textContent = since + ' days ' + (D.origin_label || ('since ' + fmt(series[0].date)));
+    if (D.origin_label && D.origin_label.length > 48) document.getElementById('day-count').style.whiteSpace = 'normal';
+  }
+  document.getElementById('status-note').textContent = D.status_note || '';
+  document.getElementById('pathogen-note').textContent = D.pathogen_note || '';
+
+  // KPI tiles
+  var METRICS = [
+    { key: 'deaths', label: 'Deaths' },
+    { key: 'confirmed', label: 'Confirmed plague' },
+    { key: 'under_observation', label: 'Contacts under observation' },
+    { key: 'symptomatic', label: 'Contacts with symptoms' }
+  ];
+  var kpis = document.getElementById('kpis');
+  METRICS.forEach(function (m) {
+    var tile = el('div', 'kpi');
+    tile.appendChild(el('div', 'label', m.label));
+    var v = counts[m.key]; if (v === undefined) v = last[m.key];
+    tile.appendChild(el('div', 'kpi-value', num(v)));
+    var foot = el('div', 'kpi-foot');
+    var delta = el('div', 'kpi-delta');
+    if (prev && prev[m.key] !== undefined && v !== undefined) {
+      var d = v - prev[m.key];
+      if (d === 0) { delta.textContent = 'No change since ' + fmt(prev.date); }
+      else { var b = el('b', null, (d > 0 ? '+' : '−') + num(Math.abs(d))); delta.appendChild(b); delta.appendChild(document.createTextNode(' since ' + fmt(prev.date))); }
+    } else { delta.textContent = 'First figure'; }
+    foot.appendChild(delta);
+    foot.appendChild(sparkline(series.map(function (s) { return s[m.key]; })));
+    tile.appendChild(foot);
+    kpis.appendChild(tile);
+  });
+
+  function sparkline(vals) {
+    var W = 72, H = 26, n = vals.length;
+    var svg = svgEl('svg', { class: 'spark', viewBox: '0 0 ' + W + ' ' + H, 'aria-hidden': 'true' });
+    var clean = vals.map(function (v) { return (v === undefined || v === null) ? null : v; });
+    var max = Math.max.apply(null, clean.filter(function (v) { return v !== null; }).concat([1]));
+    var x = function (i) { return n > 1 ? (i / (n - 1)) * (W - 6) + 3 : W / 2; };
+    var y = function (v) { return H - 3 - (v / max) * (H - 6); };
+    var d = '', lastV = null, lastX = null;
+    for (var i = 0; i < n; i++) {
+      var v = clean[i]; if (v === null) continue;
+      if (!d) d = 'M' + x(i) + ' ' + y(v); else d += ' H' + x(i) + ' V' + y(v);
+      lastV = v; lastX = x(i);
+    }
+    if (d) svg.appendChild(svgEl('path', { class: 'line', d: d }));
+    if (lastV !== null) svg.appendChild(svgEl('circle', { class: 'end', cx: lastX, cy: y(lastV), r: 2.5 }));
+    return svg;
+  }
+
+  // Main chart: under observation, step line, crosshair tooltip, keyboard
+  var chart = document.getElementById('chart');
+  var KEY = 'under_observation';
+  document.getElementById('chart-range').textContent = series.length ? fmt(series[0].date) + ' – ' + fmt(last.date) : '';
+  document.getElementById('chart-asof').textContent = counts.as_of ? 'as of ' + fmt(counts.as_of) : '';
+  var tip = el('div', 'tip'); tip.hidden = true; tip.setAttribute('role', 'status');
+  var activeIdx = -1;
+
+  function niceMax(v) { if (v <= 0) return 1; var p = Math.pow(10, Math.floor(Math.log10(v))); var f = v / p; var n = f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 4 ? 4 : f <= 5 ? 5 : 10; var m = n * p; return m === v ? m * 1.15 : m; }
+  function ticks(max) { var step = max <= 5 ? 1 : max <= 20 ? 5 : max <= 50 ? 10 : max <= 125 ? 25 : max <= 250 ? 50 : max <= 500 ? 100 : 250; var out = []; for (var t = 0; t <= max + 1e-9; t += step) out.push(Math.round(t)); return out; }
+
+  function drawChart() {
+    chart.textContent = '';
+    if (!series.length) return;
+    var cw = chart.clientWidth || 640;
+    var W = Math.max(300, cw), H = Math.round(Math.min(360, Math.max(220, W * 0.42)));
+    var m = { t: 18, r: 64, b: 30, l: 40 };
+    var vals = series.map(function (s) { return s[KEY]; });
+    var maxV = niceMax(Math.max.apply(null, vals.filter(function (v) { return v !== undefined && v !== null; }).concat([1])));
+    var n = series.length;
+    var x = function (i) { return m.l + (n > 1 ? (i / (n - 1)) * (W - m.l - m.r) : (W - m.l - m.r) / 2); };
+    var y = function (v) { return m.t + (1 - v / maxV) * (H - m.t - m.b); };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img', 'aria-hidden': 'true' });
+
+    var grid = svgEl('g', { class: 'grid' });
+    var tk = ticks(maxV);
+    tk.forEach(function (t) {
+      if (t === 0) return;
+      grid.appendChild(svgEl('line', { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t) }));
+      var lab = svgEl('text', { x: m.l - 8, y: y(t) + 4, 'text-anchor': 'end' }); lab.textContent = num(t); grid.appendChild(lab);
+    });
+    svg.appendChild(grid);
+    var axis = svgEl('g', { class: 'axis' });
+    axis.appendChild(svgEl('line', { x1: m.l, x2: W - m.r, y1: y(0), y2: y(0) }));
+    var zero = svgEl('text', { x: m.l - 8, y: y(0) + 4, 'text-anchor': 'end' }); zero.textContent = '0'; axis.appendChild(zero);
+    var every = Math.max(1, Math.ceil(n / Math.floor((W - m.l - m.r) / 64)));
+    for (var i = 0; i < n; i++) {
+      if (i % every !== 0 && i !== n - 1) continue;
+      if (i === n - 1 && n > 1 && (n - 1) % every !== 0 && x(n - 1) - x(Math.floor((n - 1) / every) * every) < 48) continue;
+      var t2 = svgEl('text', { x: x(i), y: H - 8, 'text-anchor': i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle' }); t2.textContent = fmt(series[i].date); axis.appendChild(t2);
+    }
+    svg.appendChild(axis);
+
+    var dLine = '', dArea = '', lastI = -1;
+    for (var j = 0; j < n; j++) {
+      var v = vals[j]; if (v === undefined || v === null) continue;
+      if (!dLine) { dLine = 'M' + x(j) + ' ' + y(v); dArea = 'M' + x(j) + ' ' + y(0) + ' L' + x(j) + ' ' + y(v); }
+      else { dLine += ' H' + x(j) + ' V' + y(v); dArea += ' H' + x(j) + ' V' + y(v); }
+      lastI = j;
+    }
+    if (lastI >= 0) {
+      dArea += ' V' + y(0) + ' Z';
+      svg.appendChild(svgEl('path', { class: 'area', d: dArea }));
+      svg.appendChild(svgEl('path', { class: 'line', d: dLine }));
+      svg.appendChild(svgEl('circle', { class: 'end', cx: x(lastI), cy: y(vals[lastI]), r: 4.5 }));
+      var endLab = svgEl('text', { class: 'end-label', x: x(lastI) + 12, y: y(vals[lastI]) + 5 }); endLab.textContent = num(vals[lastI]); svg.appendChild(endLab);
+    }
+
+    var cross = svgEl('g', { class: 'cross' }); cross.setAttribute('visibility', 'hidden');
+    var cl = svgEl('line', { x1: 0, x2: 0, y1: m.t, y2: y(0) }); var cc = svgEl('circle', { r: 4, cx: 0, cy: 0 });
+    cross.appendChild(cl); cross.appendChild(cc); svg.appendChild(cross);
+    var hit = svgEl('rect', { class: 'hit', x: m.l, y: 0, width: W - m.l - m.r, height: H });
+    svg.appendChild(hit);
+    chart.appendChild(svg); chart.appendChild(tip);
+
+    function show(i) {
+      if (i < 0 || i >= n) { cross.setAttribute('visibility', 'hidden'); tip.hidden = true; activeIdx = -1; return; }
+      activeIdx = i;
+      var s = series[i]; var v = s[KEY];
+      cl.setAttribute('x1', x(i)); cl.setAttribute('x2', x(i));
+      if (v !== undefined && v !== null) { cc.setAttribute('cx', x(i)); cc.setAttribute('cy', y(v)); cc.setAttribute('visibility', 'visible'); } else { cc.setAttribute('visibility', 'hidden'); }
+      cross.setAttribute('visibility', 'visible');
+      tip.textContent = '';
+      tip.appendChild(el('div', 'tip-date', fmt(s.date, true)));
+      [['under_observation', 'Under observation'], ['hospitalized', 'Of whom in hospital'], ['symptomatic', 'With symptoms'], ['suspected', 'Suspected plague'], ['confirmed', 'Confirmed plague'], ['deaths', 'Deaths']].forEach(function (p) {
+        if (s[p[0]] === undefined || s[p[0]] === null) return;
+        var r = el('div', 'row'); r.appendChild(el('span', null, p[1])); r.appendChild(el('b', null, num(s[p[0]]))); tip.appendChild(r);
+      });
+      if (s.note) tip.appendChild(el('div', 'note', s.note));
+      tip.hidden = false;
+      var tw = tip.offsetWidth, px = x(i);
+      var left = px + 14; if (left + tw > W) left = px - tw - 14; if (left < 0) left = 0;
+      tip.style.left = left + 'px'; tip.style.top = (m.t) + 'px';
+    }
+    function idxFromEvent(ev) {
+      var r = svg.getBoundingClientRect(); var px = (ev.clientX - r.left) * (W / r.width);
+      var best = 0, bd = Infinity; for (var k = 0; k < n; k++) { var dd = Math.abs(x(k) - px); if (dd < bd) { bd = dd; best = k; } }
+      return best;
+    }
+    hit.addEventListener('pointermove', function (ev) { show(idxFromEvent(ev)); });
+    hit.addEventListener('pointerdown', function (ev) { show(idxFromEvent(ev)); });
+    hit.addEventListener('pointerleave', function () { if (document.activeElement !== chart) show(-1); });
+    chart.onkeydown = function (ev) {
+      if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft' || ev.key === 'Home' || ev.key === 'End') {
+        ev.preventDefault();
+        var i = activeIdx < 0 ? n - 1 : activeIdx;
+        if (ev.key === 'ArrowRight') i = Math.min(n - 1, i + 1); else if (ev.key === 'ArrowLeft') i = Math.max(0, i - 1); else if (ev.key === 'Home') i = 0; else i = n - 1;
+        show(i);
+      } else if (ev.key === 'Escape') { show(-1); }
+    };
+    chart.onfocus = function () { if (activeIdx < 0) show(n - 1); };
+    chart.onblur = function () { show(-1); };
+  }
+  drawChart();
+  var rafId = 0;
+  if (window.ResizeObserver) { new ResizeObserver(function () { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(drawChart); }).observe(chart); }
+  else { window.addEventListener('resize', function () { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(drawChart); }); }
+
+  // Watch list and unknowns (the to-do lists)
+  function fillTodo(id, items, hollow) {
+    var ul = document.getElementById(id); ul.textContent = '';
+    (items || []).map(strOrText).forEach(function (it) {
+      var li = el('li', it.done ? 'done' : null);
+      li.appendChild(el('span', 'sq' + ((hollow && !it.done) ? ' hollow' : ''), null));
+      li.appendChild(el('span', null, it.text));
+      ul.appendChild(li);
+    });
+    if (!(items || []).length) ul.parentNode.hidden = true;
+  }
+  fillTodo('watch', D.watch, true);
+  fillTodo('unknowns', D.unknowns, true);
+
+  // Daily log (also the chart's table view)
+  var tbody = document.querySelector('#log tbody');
+  var cols = ['under_observation', 'symptomatic', 'confirmed', 'deaths'];
+  var colLabels = { under_observation: 'Observed', symptomatic: 'Symptoms', confirmed: 'Confirmed', deaths: 'Deaths' };
+  series.slice().reverse().forEach(function (s, ri, arr) {
+    var before = arr[ri + 1];
+    var tr = el('tr', ri === 0 ? 'today' : null);
+    var td = el('td', 'date mono', fmt(s.date)); tr.appendChild(td);
+    cols.forEach(function (c) {
+      var changed = before && s[c] !== undefined && before[c] !== undefined && s[c] !== before[c];
+      var tdn = el('td', 'num' + (changed ? ' changed' : ''), num(s[c])); tdn.setAttribute('data-label', colLabels[c]); tr.appendChild(tdn);
+    });
+    var noteTd = el('td', 'note');
+    if (s.source_url) { var a = el('a', null, s.note || ''); a.href = s.source_url; a.target = '_blank'; a.rel = 'noopener'; noteTd.appendChild(a); }
+    else noteTd.textContent = s.note || '';
+    tr.appendChild(noteTd);
+    tbody.appendChild(tr);
+  });
+
+  // Headlines
+  var heads = document.getElementById('heads');
+  (D.headlines || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }).forEach(function (h) {
+    var li = el('li');
+    var meta = el('div', 'meta-row');
+    var d = el('span', 'mono', fmt(h.date));
+    var s = el('span', 'source', h.source);
+    if (window.matchMedia && window.matchMedia('(max-width: 760px)').matches) { meta.appendChild(d); meta.appendChild(s); li.appendChild(meta); }
+    else { li.appendChild(d); li.appendChild(s); }
+    var t = el('div', 'title'); var a = el('a', null, h.title); a.href = h.url; a.target = '_blank'; a.rel = 'noopener'; t.appendChild(a); li.appendChild(t);
+    heads.appendChild(li);
+  });
+
+  // Timeline
+  var tl = document.getElementById('timeline');
+  (D.timeline || []).slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; }).forEach(function (t) {
+    var li = el('li');
+    li.appendChild(el('span', 'mono date', fmt(t.date)));
+    li.appendChild(el('span', 'sq', null));
+    var body = el('div'); body.appendChild(document.createTextNode(t.text));
+    if (t.source_url) { var src = el('a', 'src', t.source_name || host(t.source_url)); src.href = t.source_url; src.target = '_blank'; src.rel = 'noopener'; body.appendChild(src); }
+    li.appendChild(body); tl.appendChild(li);
+  });
+
+  // Context
+  var ctx = document.getElementById('context');
+  (D.context || []).forEach(function (c) {
+    var li = el('li'); li.appendChild(document.createTextNode(c.text));
+    if (c.source_url) { var src = el('a', 'src', c.source_name || host(c.source_url)); src.href = c.source_url; src.target = '_blank'; src.rel = 'noopener'; li.appendChild(src); }
+    ctx.appendChild(li);
+  });
+
+  // Footer
+  var srcs = document.getElementById('sources');
+  (D.sources || []).forEach(function (s) {
+    var li = el('li'); var a = el('a', null, s.name); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; li.appendChild(a);
+    if (s.tier) li.appendChild(el('span', 'tier', ' · ' + s.tier.replace(/_/g, ' '))); srcs.appendChild(li);
+  });
+  if (D.method_note) document.getElementById('method-note').textContent = D.method_note;
+  document.getElementById('update-note').textContent = D.update_note || ('Refreshed once a day. Last update ' + fmt(D.updated, true) + '.');
+  document.getElementById('colophon').textContent = D.colophon || '';
+})();
+</script>
+</body>
+</html>
