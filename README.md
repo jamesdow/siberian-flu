@@ -4,7 +4,7 @@ A minimal daily tracker of the plague laboratory incident at the Irkutsk Anti-Pl
 Research Institute in Siberia: the counts, how they have moved day by day, the
 headlines as published, a timeline and the context needed to read it without alarm.
 
-**Live page:** see the artifact link below.
+**Live page:** https://claude.ai/artifact/EMDxjW1r9r2R3aGbbjWx6D (private to the owner until shared).
 
 ## How it works
 
@@ -31,4 +31,6 @@ Claude Code if the incident closes or the updates are no longer wanted.
 
 ## Artifact
 
-ARTIFACT_URL_PLACEHOLDER
+https://claude.ai/artifact/EMDxjW1r9r2R3aGbbjWx6D
+
+The daily routine reads this address, then republishes `artifact.html` to it so the link never changes.

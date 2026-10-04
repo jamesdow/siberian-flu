@@ -117,6 +117,8 @@
   .todo li:last-child { border-bottom: 1px solid var(--rule); }
   .todo .sq { margin-top: 6px; }
   .todo li.done { color: var(--ink-3); }
+  .show-all { margin-top: 10px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+  .show-all:hover { color: var(--ink); }
 
   /* Sections with a narrow label column */
   .sec { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 16px; padding-block: 28px; border-bottom: 1px solid var(--rule); }
@@ -138,6 +140,10 @@
   .log tr.today td.note { font-weight: 400; }
   .log .num.changed { font-weight: 600; }
   .log-wrap { overflow-x: auto; }
+  .log .more, .log .src-link { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-left: 6px; white-space: nowrap; }
+  .log .more:hover, .log .src-link:hover { color: var(--ink); text-decoration: none; }
+  .log tr.detail td { padding: 0 0 12px 0; color: var(--ink-2); font-size: 13px; line-height: 1.5; max-width: 72ch; border-bottom: 1px solid var(--rule); }
+  .log tr:has(+ tr.detail:not([hidden])) td { border-bottom: 0; }
 
   /* Headlines */
   .heads li { display: grid; grid-template-columns: 7.5em 8.5em 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
@@ -206,6 +212,8 @@
     .log td.num { display: inline-block; margin-right: 14px; text-align: left; font-size: 13px; }
     .log td.num::before { content: attr(data-label); color: var(--ink-3); margin-right: 5px; font-weight: 400; }
     .log td.note { display: block; margin-top: 4px; }
+    .log tr.detail { padding-top: 0; }
+    .log tr.detail td { display: block; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .heads li, .tl li, .todo li { transition: background-color 120ms ease; }
@@ -241,7 +249,8 @@
     <aside class="rail">
       <div class="rail-top">
         <p class="lede" id="status-note"></p>
-        <p class="pathogen" id="pathogen-note" style="margin-top:14px"></p>
+        <p class="pathogen" id="status-more" hidden style="margin-top:12px"></p>
+        <p class="pathogen" id="pathogen-note" style="margin-top:12px"></p>
       </div>
       <div>
         <h2 class="label">Watching for</h2>
@@ -320,7 +329,12 @@
     document.getElementById('day-count').textContent = since + ' days ' + (D.origin_label || ('since ' + fmt(series[0].date)));
     if (D.origin_label && D.origin_label.length > 48) document.getElementById('day-count').style.whiteSpace = 'normal';
   }
-  document.getElementById('status-note').textContent = D.status_note || '';
+  (function () {
+    var note = D.status_note || '';
+    var m = note.match(/^(.+?[.!?])(\s+)([\s\S]+)$/);
+    if (m && m[1].length >= 40) { document.getElementById('status-note').textContent = m[1]; var sm = document.getElementById('status-more'); sm.textContent = m[3]; sm.hidden = false; }
+    else document.getElementById('status-note').textContent = note;
+  })();
   document.getElementById('pathogen-note').textContent = D.pathogen_note || '';
 
   // KPI tiles
@@ -445,7 +459,7 @@
         if (s[p[0]] === undefined || s[p[0]] === null) return;
         var r = el('div', 'row'); r.appendChild(el('span', null, p[1])); r.appendChild(el('b', null, num(s[p[0]]))); tip.appendChild(r);
       });
-      if (s.note) tip.appendChild(el('div', 'note', s.note));
+      if (s.note_short || s.note) tip.appendChild(el('div', 'note', s.note_short || s.note));
       tip.hidden = false;
       var tw = tip.offsetWidth, px = x(i);
       var left = px + 14; if (left + tw > W) left = px - tw - 14; if (left < 0) left = 0;
@@ -476,18 +490,29 @@
   else { window.addEventListener('resize', function () { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(drawChart); }); }
 
   // Watch list and unknowns (the to-do lists)
-  function fillTodo(id, items, hollow) {
+  function fillTodo(id, items, hollow, limit) {
     var ul = document.getElementById(id); ul.textContent = '';
-    (items || []).map(strOrText).forEach(function (it) {
+    var list = (items || []).map(strOrText);
+    list.forEach(function (it, i) {
       var li = el('li', it.done ? 'done' : null);
+      if (limit && i >= limit) li.hidden = true;
       li.appendChild(el('span', 'sq' + ((hollow && !it.done) ? ' hollow' : ''), null));
       li.appendChild(el('span', null, it.text));
       ul.appendChild(li);
     });
-    if (!(items || []).length) ul.parentNode.hidden = true;
+    if (!list.length) ul.parentNode.hidden = true;
+    if (limit && list.length > limit) {
+      var btn = el('button', 'show-all', 'Show ' + (list.length - limit) + ' more'); btn.type = 'button'; btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        Array.prototype.forEach.call(ul.children, function (li, i) { if (i >= limit) li.hidden = open; });
+        btn.setAttribute('aria-expanded', String(!open)); btn.textContent = open ? 'Show ' + (list.length - limit) + ' more' : 'Show fewer';
+      });
+      ul.parentNode.appendChild(btn);
+    }
   }
   fillTodo('watch', D.watch, true);
-  fillTodo('unknowns', D.unknowns, true);
+  fillTodo('unknowns', D.unknowns, true, 5);
 
   // Daily log (also the chart's table view)
   var tbody = document.querySelector('#log tbody');
@@ -502,10 +527,24 @@
       var tdn = el('td', 'num' + (changed ? ' changed' : ''), num(s[c])); tdn.setAttribute('data-label', colLabels[c]); tr.appendChild(tdn);
     });
     var noteTd = el('td', 'note');
-    if (s.source_url) { var a = el('a', null, s.note || ''); a.href = s.source_url; a.target = '_blank'; a.rel = 'noopener'; noteTd.appendChild(a); }
-    else noteTd.textContent = s.note || '';
+    var shortNote = s.note_short || s.note || '';
+    noteTd.appendChild(document.createTextNode(shortNote));
+    var hasMore = s.note && s.note !== shortNote;
+    if (hasMore || s.source_url) {
+      noteTd.appendChild(document.createTextNode(' '));
+      if (hasMore) {
+        var btn = el('button', 'more', 'More'); btn.type = 'button'; btn.setAttribute('aria-expanded', 'false');
+        noteTd.appendChild(btn);
+      }
+      if (s.source_url) { var a = el('a', 'src-link', 'Source'); a.href = s.source_url; a.target = '_blank'; a.rel = 'noopener'; noteTd.appendChild(a); }
+    }
     tr.appendChild(noteTd);
     tbody.appendChild(tr);
+    if (hasMore) {
+      var dtr = el('tr', 'detail'); dtr.hidden = true;
+      var dtd = el('td', null, s.note); dtd.colSpan = cols.length + 2; dtr.appendChild(dtd); tbody.appendChild(dtr);
+      btn.addEventListener('click', function () { var open = dtr.hidden; dtr.hidden = !open; btn.textContent = open ? 'Less' : 'More'; btn.setAttribute('aria-expanded', String(open)); });
+    }
   });
 
   // Headlines

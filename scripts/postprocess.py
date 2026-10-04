@@ -2,15 +2,33 @@
 """Normalise a research result into data/outbreak.json.
 Usage: python3 scripts/postprocess.py <result.json>
 Accepts either the data object itself or a wrapper with a "data" key."""
-import json, sys, datetime as dt
+import json, sys, re, datetime as dt
+
+def clean(text):
+    """Strip inline URLs from prose; sources live in source_url fields."""
+    t = re.sub(r';?\s*also\s+https?://\S+', '', text or '')
+    t = re.sub(r',?\s*https?://\S+', '', t)
+    t = re.sub(r'\(\s*\)', '', t)
+    t = re.sub(r'\(\s*[,;]\s*', '(', t)
+    t = re.sub(r'\s+([.,;)])', r'\1', t)
+    return re.sub(r'\s{2,}', ' ', t).strip()
+
+def short(text):
+    """One sentence for the table: skip carry-forward boilerplate when there is more to say."""
+    sents = re.split(r'(?<=[.!?])\s+', text.strip())
+    body = [x for x in sents if not re.search(r'carried forward|no new (contact )?(figure|count)', x, re.I)] or sents
+    out = body[0]
+    if len(out) > 210: out = out[:207].rsplit(' ', 1)[0] + '…'
+    return out
 
 src = sys.argv[1]
 r = json.load(open(src))
 d = r.get('data', r) if isinstance(r, dict) else r
 if not d: sys.exit('no data in result')
 
-d.setdefault('title', 'Irkutsk Plague Watch')
-d.setdefault('eyebrow', 'Siberia · Yersinia pestis · laboratory incident')
+d['title'] = 'Irkutsk Plague Watch'  # the page's name; the research title is kept in research_title
+if r is not d and d.get('title') != 'Irkutsk Plague Watch': pass
+d['eyebrow'] = d.get('eyebrow') or ('Irkutsk · suspected plague · laboratory incident' if not d.get('counts', {}).get('confirmed') else 'Irkutsk · plague · laboratory incident')
 
 def day(s): return dt.date.fromisoformat(s)
 NUM = ['deaths', 'confirmed', 'suspected', 'under_observation', 'hospitalized', 'symptomatic', 'cleared']
@@ -34,6 +52,8 @@ while cur <= last:
         for n in NUM:
             if n not in s and prev is not None and n in prev: s[n] = prev[n]
     for n in ['deaths', 'confirmed', 'suspected', 'under_observation', 'symptomatic']: s.setdefault(n, 0)
+    s['note'] = clean(s.get('note', ''))
+    s['note_short'] = short(s['note'])
     out.append(s); prev = s; cur += dt.timedelta(days=1)
 d['series'] = out
 
@@ -58,6 +78,10 @@ for h in sorted(d.get('headlines', []), key=lambda h: h.get('date', ''), reverse
     heads.append({'date': h['date'], 'source': h['source'], 'title': h['title'].strip(), 'url': h['url'], 'tone': h.get('tone', 'neutral')})
 d['headlines'] = heads[:14]
 
+for t in d.get('timeline', []): t['text'] = clean(t['text'])
+for c in d.get('context', []): c['text'] = clean(c['text'])
+d['unknowns'] = [clean(u) for u in d.get('unknowns', [])]
+d['status_note'] = clean(d.get('status_note', ''))
 d['timeline'] = sorted(d.get('timeline', []), key=lambda t: t['date'])
 
 json.dump(d, open('data/outbreak.json', 'w'), indent=2, ensure_ascii=False)
