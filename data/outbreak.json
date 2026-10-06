@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
   "origin_label": "since the reported test-tube break on 25 Sep, which officials have not confirmed",
-  "method_note": "Two research passes totalling 31 web searches in Russian and English, snippets only (no page fetches). Each count was checked against the latest Rospotrebnadzor statement as relayed by Interfax and Kommersant (4 Oct) and found unchanged; the 197 / 189 contact figures were re-checked in Meduza's 5 Oct feature and remain media figures with no official counterpart, so they are carried forward and counts_as_of stays 4 Oct. Headlines were limited to confirmed titles with sober or neutral tone, at most two per outlet; alarmist items (GB News, United24, Euronews, Newsweek) were excluded. On the question of whether the tracker updates daily: yes. An enabled Routine named 'Irkutsk Plague Watch daily update' (trig_01K5B6CddgVFDnsrDo4bTw4k) fires at 07:50 Europe/London every day into this session; its next run is 2026-10-06 06:50 UTC. It pulls the repo, researches, updates data/outbreak.json, rebuilds, commits, republishes the artifact and sends a push notification.",
+  "method_note": "Figures taken only from the verified-facts list and confirmed headlines. The 60% release figure and the 2 COVID-19 / 2 rhinovirus results come from Rospotrebnadzor via Interfax (1120505), corroborated by OGIRK, NIA Ekologiya, Sibnovosti and IrCity. No absolute count was published, so under_observation (197) and hospitalized (189) are both carried forward unchanged from the media-sourced base; the derived split (about 118 released, about 79 remaining, 40% of 197) is mentioned in the note only and is not an official or reported count. Deaths, confirmed, suspected and symptomatic are unchanged. The 6 October denial of restrictions is from Interfax (1120556), corroborated by Fontanka, IrkutskMedia and IrCity. Pages were not fetched by the sweep, so quotes and dates rest on search snippets. Alarmist headlines (Türkiye Today, Newsweek map, Gordonua, GB News) were excluded; the Newsweek scrutiny piece was omitted as borderline.",
   "status": "watching",
-  "status_note": "As of 5 October there is no new official statement: Rospotrebnadzor's 4 October position stands (pneumonia of undetermined etiology, no micro-organisms linked to her work found, all identified contacts under observation with negative results, situation stable), and the 197 contacts / 189 hospitalised figures remain media-sourced with no official count, release or discharge figure. What changed is outside the epidemiology: the US State Department and White House say they are monitoring, regional media report the Shelekhov inpatient block still closed and Irkutsk city hospitals operating normally, and the reported scope of Irkutsk hospital restrictions remains contested.",
+  "status_note": "As of 6 October Rospotrebnadzor has issued its first release figure, saying on 5 October that observation was completed for 60% of contacts and that screening found only 2 COVID-19 and 2 rhinovirus cases with no other pathogens; the diagnosis remains pneumonia of undetermined etiology, Yersinia pestis is still not named, and the contact base of 197 remains media-sourced. On 6 October the regional directorate denied region-wide restrictions and called a circulating regime document a fake, while regional media report the Shelekhov hospital quarantine still in force; WHO and Kazakhstan assess the risk as low, and the European Commission says it is monitoring closely.",
   "counts": {
-    "as_of": "2026-10-04",
+    "as_of": "2026-10-05",
     "confirmed": 0,
     "deaths": 1,
     "hospitalized": 189,
@@ -145,6 +145,18 @@
       "note": "No new figure; carried forward. No Rospotrebnadzor statement dated 5 October was found; the 4 October statement (pneumonia of undetermined etiology, no micro-organisms linked to her work, all identified contacts under observation with negative laboratory results, two COVID-19 and two rhinovirus cases) remains the latest official word. The 197 / 189 contact figures remain media-sourced (REN TV via Izvestia, repeated by Meduza on 5 Oct as 114 + 63 + 12 at the institute); no official count, release or discharge figure has been published. New context: regional outlet IrCity reports the Shelekhov district hospital inpatient block still closed while the Shelekhov polyclinic works normally, and that Irkutsk city hospitals operate normally, with the Ivano-Matreninskaya children's hospital denying a quarantine on 4 Oct; fact-check outlets (voynasfeykami.rf, spbnews78) call the four-hospital three-week quarantine report false, while The Insider and Meduza say hospitals confirmed restrictions to journalists. A US State Department official said on 4 Oct the US is monitoring with the CDC; a White House official told Axios it is 'assessing options'. A criminal case under Article 236 was reported by Rambler on 2 Oct; the investigating body is not named.",
       "note_short": "No new figure; carried forward. No new official statement; US government says it is monitoring; Shelekhov inpatient block still closed per regional media.",
       "source_url": "https://www.interfax.ru/russia/1120228"
+    },
+    {
+      "date": "2026-10-06",
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 197,
+      "hospitalized": 189,
+      "symptomatic": 0,
+      "note": "First official release figure. Rospotrebnadzor (via Interfax, 5 Oct; repeated by OGIRK and NIA Ekologiya on 6 Oct) says medical observation has been completed for 60% of contacts, decided on laboratory results and health status. No absolute count was given; under_observation is kept at the media-sourced 197 base as an unchanged carry-forward, since no outlet reports a new count. Applying the 60% to that base would give about 118 released and about 79 remaining, but both figures are derived rather than reported and are not in the series. The hospitalized figure of 189 is carried forward unchanged; no official discharge figure has been published. The same Rospotrebnadzor statement reports screening found 2 COVID-19 and 2 rhinovirus cases among contacts and no other infectious-disease pathogens, with contacts' health unchanged; these are incidental infections, so symptomatic for the suspected pathogen stays 0. Yersinia pestis remains neither named, confirmed nor excluded; the diagnosis is still pneumonia of undetermined etiology, so confirmed stays 0. On 6 Oct the regional Rospotrebnadzor directorate called a circulating document about an enhanced sanitary-epidemiological regime a fake, said no restrictions have been decided, and said a biosafety oversight commission found no emergencies in work with pathogens at the institute; an expert commission sent on the instruction of Rospotrebnadzor leadership confirmed that finding and a check of institute staff found no health changes linked to infectious pathology. WHO (spokesperson Christian Lindmeier) says it is in contact with Russian authorities to verify the event and laboratory tests and assesses the risk to the general population as low based on unofficial information; this is a press statement, not a Disease Outbreak News item. Regional media report the Shelekhov hospital quarantine still in force on 6 Oct.",
+      "note_short": "Rospotrebnadzor says observation completed for 60% of contacts (no absolute count; 197 / 189 base carried forward unchanged, about 79 remaining if derived); 2 COVID-19 and 2 rhinovirus found among contacts, no other pathogens.",
+      "source_url": "https://www.interfax.ru/russia/1120505"
     }
   ],
   "timeline": [
@@ -245,6 +257,12 @@
       "source_url": "https://spbnews78.ru/society/2026/10/04/347629.html"
     },
     {
+      "date": "2026-10-04",
+      "text": "WHO told CNN it is in contact with Russian health authorities to verify the event, its circumstances, the laboratory tests under way and their results, and that the risk to the general population appears low based on unofficial information.",
+      "source_name": "CNN",
+      "source_url": "https://www.cnn.com/2026/10/04/europe/russia-laboratory-plague-accident-intl"
+    },
+    {
       "date": "2026-10-05",
       "text": "A White House official told Axios the administration is aware of the suspected outbreak, is monitoring it and is 'assessing options'.",
       "source_name": "Meduza",
@@ -255,106 +273,172 @@
       "text": "Regional outlet IrCity reports the Shelekhov district hospital inpatient block remains closed while the Shelekhov polyclinic takes planned and emergency patients, and that Irkutsk city hospitals operate normally. No new Rospotrebnadzor statement was found; the agency's 4 October position stands.",
       "source_name": "IrCity.ru",
       "source_url": "https://ircity.ru/text/health/2026/10/05/76678812/"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "Rospotrebnadzor's press service said medical observation had been completed for 60% of the contacts of the deceased employee, on the basis of laboratory results and their state of health, and that the sanitary-epidemiological situation in Irkutsk Oblast is calm. Screening of contacts found 2 COVID-19 and 2 rhinovirus cases and no other infectious-disease pathogens; contacts' health status was unchanged. No absolute count was given and Yersinia pestis was not named.",
+      "source_name": "Interfax (citing Rospotrebnadzor press service)",
+      "source_url": "https://www.interfax.ru/russia/1120505"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "Kremlin spokesman Dmitry Peskov said Rospotrebnadzor is the competent agency and urged people to rely on its official statements rather than rumours.",
+      "source_name": "Lenta.ru",
+      "source_url": "https://lenta.ru/news/2026/10/05/kreml-prokommentiroval-soobscheniya-o-chume-v-rossii/"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "WHO spokesperson Christian Lindmeier said WHO is in contact with Russian health authorities to verify the event, the laboratory tests and their results, the rationale for contact tracing and the health status of contacts, and that based on unofficial information the public-health risk to the general population appears low. This is a press statement, not a Disease Outbreak News item.",
+      "source_name": "TASS",
+      "source_url": "https://tass.com/society/2197879"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "President Trump told reporters at the White House the US is ready to help Russia with the suspected case if asked and that he had not spoken to Putin about it.",
+      "source_name": "Axios",
+      "source_url": "https://www.axios.com/2026/10/05/trump-us-russia-pneumonic-plague-risk-outbreak"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "European Commission spokesperson Eva Hrnčířová said the Commission is aware of reports of a laboratory incident in Russia seemingly involving a plague pathogen, is in touch with ECDC experts, is monitoring closely and uses WHO channels for updates. No ECDC publication has been found.",
+      "source_name": "Euronews",
+      "source_url": "https://www.euronews.com/2026/10/05/situation-under-control-russian-authorities-reassure-public-after-plague-reports-in-siberi"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "Kazakhstan's Ministry of Health said it is monitoring the Irkutsk situation, has strengthened sanitary-quarantine control at border crossings, assesses the risk of importation as low and has detected no travellers with fever or signs of illness.",
+      "source_name": "Kursiv",
+      "source_url": "https://kz.kursiv.media/2026-10-05/juju-minzdrav-kazahstana-oczenil-risk-zavoza-chumy-iz-irkutskoj-oblasti/"
+    },
+    {
+      "date": "2026-10-05",
+      "text": "RFE/RL reported, without an official figure, that more than 60 staff of the Anti-Plague Institute had been isolated after the worker's death.",
+      "source_name": "RFE/RL",
+      "source_url": "https://www.rferl.org/a/russia-plague-warning-siberia-irkutsk-laboratory/33870385.html"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "Rospotrebnadzor's Irkutsk directorate declared a circulating document announcing an enhanced sanitary-epidemiological regime and strict restrictions in the region to be fake, said no decisions on restrictions have been taken, said the situation in Irkutsk and Shelekhov is calm, and said a biosafety oversight commission found no emergency situations in work with pathogenic microorganisms at the institute.",
+      "source_name": "Interfax",
+      "source_url": "https://www.interfax.ru/russia/1120556"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "Rospotrebnadzor said an expert commission sent to the Anti-Plague Institute on the instruction of its leadership confirmed the biosafety commission's finding of no accidents with pathogenic microorganisms, and that examination of institute staff showed no health changes linked to infectious pathology.",
+      "source_name": "IrCity",
+      "source_url": "https://ircity.ru/text/society/2026/10/06/76680643/"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "Regional media report the Shelekhov hospital quarantine remains in force despite Rospotrebnadzor's denial of regional restrictions.",
+      "source_name": "Prufy.ru",
+      "source_url": "https://prufy.ru/news/society/193358-rospotrebnadzor_oproverg_ugrozu_chumy_v_irkutskoy_oblasti_no_karantin_v_shelekhove_ostayetsya_v_sile/"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "IrCity reports the Irkutsk Anti-Plague Institute is going ahead with an international conference on plague distribution on 21 and 22 October, planned before the incident; this is the first item indicating the institute is operating.",
+      "source_name": "IrCity",
+      "source_url": "https://ircity.ru/text/society/2026/10/06/76680628/"
     }
   ],
   "headlines": [
     {
-      "date": "2026-10-05",
-      "source": "IrCity.ru",
-      "title": "Как работает поликлиника в Шелехове",
-      "url": "https://ircity.ru/text/health/2026/10/05/76678812/",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "IrCity.ru",
-      "title": "Закрыли ли в Иркутске больницы из-за смерти в Шелехове сотрудницы противочумного института",
-      "url": "https://ircity.ru/text/health/2026/10/05/76678768/",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "Meduza",
-      "title": "Hospitals in Irkutsk impose quarantines after an employee at an anti-plague institute dies. Russia's public health agency says she died of pneumonia and the epidemiological situation remains 'stable.'",
-      "url": "https://meduza.io/en/feature/2026/10/05/hospitals-in-irkutsk-impose-quarantines-after-an-employee-at-an-anti-plague-institute-dies-russia-s-public-health-agency-says-she-died-of-pneumonia-and-the-epidemiological-situation-remains-stable",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "Meduza",
-      "title": "White House says it's monitoring reports of plague in Russia, 'assessing options'",
-      "url": "https://meduza.io/en/news/2026/10/05/white-house-says-it-s-monitoring-reports-of-plague-in-russia-assessing-options",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "AP via WRAL",
-      "title": "Researcher at Russian plague laboratory dies of 'unknown' infection",
-      "url": "https://www.wral.com/news/ap/researcher-dies-of-unknown-infection-russian-plague-laboratory-october-2026/",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "Al Jazeera",
-      "title": "Russian lab worker dies of suspected plague in Siberia; US monitoring case",
-      "url": "https://www.aljazeera.com/news/2026/10/5/russian-lab-worker-dies-of-suspected-plague-in-siberia-us-monitoring-case",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "Forbes",
-      "title": "Russian Plague Lab Researcher Death: What We Know About 'Unknown' Pneumonia",
-      "url": "https://www.forbes.com/sites/siladityaray/2026/10/05/russian-plague-lab-researcher-dies-as-nearly-200-monitored-heres-what-we-know/",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-05",
-      "source": "CNBC",
-      "title": "Russia hospitalizes almost 200 people after researcher's death from plague: Reports",
-      "url": "https://www.cnbc.com/2026/10/05/suspected-plague-cases-reported-in-russias-irkutsk-region.html",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-04",
-      "source": "Kommersant",
-      "title": "Роспотребнадзор: эпидобстановка в Иркутской области стабильная",
-      "url": "https://www.kommersant.ru/doc/9005850",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-04",
-      "source": "RFE/RL",
-      "title": "US Monitors Suspected Plague Case In Russia As Calls Grow For Travel Restrictions",
-      "url": "https://www.rferl.org/a/russia-plague-warning-siberia-irkutsk-laboratory/33870385.html",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-04",
-      "source": "The Insider",
-      "title": "Как минимум три больницы Иркутска ввели карантин после смерти сотрудницы противочумного института. Роспотребнадзор говорит о пневмонии",
-      "url": "https://theins.ru/news/297886",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-04",
-      "source": "spbnews78.ru / voynasfeykami.rf",
-      "title": "Фейк: Сразу четыре больницы Иркутска, включая детскую, закрыты на карантин на три недели",
-      "url": "https://spbnews78.ru/society/2026/10/04/347629.html",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-04",
-      "source": "Radio Svoboda",
-      "title": "Карантин в больницах, маски на ИркАЗ. Власти не подтверждают чуму",
-      "url": "https://www.svoboda.org/a/karantin-v-boljnitsah-maski-na-irkaz-vlasti-ne-podtverzhdayut-chumu/33870054.html",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-04",
+      "date": "2026-10-06",
       "source": "Interfax",
-      "title": "Роспотребнадзор заявил о стабильной обстановке в Иркутской области",
-      "url": "https://www.interfax.ru/russia/1120228",
+      "title": "Роспотребнадзор отрицает введение ограничений в Иркутской области",
+      "url": "https://www.interfax.ru/russia/1120556",
       "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "Областная газета OGIRK.RU",
+      "title": "60% контактирующих с умершей от пневмонии девушкой завершили обследование",
+      "url": "https://www.ogirk.ru/2026/10/06/60-kontaktirujushhih-s-umershej-ot-pnevmonii-devushkoj-zavershili-obsledovanie/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "НИА Экология",
+      "title": "В Приангарье завершили наблюдение за 60% контактировавших с сотрудницей противочумного института",
+      "url": "https://nia.eco/2026/10/06/143567/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "IrCity",
+      "title": "Роспотребнадзор проверил сотрудников Иркутского противочумного института после смерти сотрудницы",
+      "url": "https://ircity.ru/text/society/2026/10/06/76680643/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "IrCity",
+      "title": "ВОЗ оценила риски для здоровья жителей Иркутской области после выявления пневмонии неустановленной этиологии",
+      "url": "https://ircity.ru/text/society/2026/10/06/76680763/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "IrkutskMedia",
+      "title": "ВОЗ оценила риск для населения из-за выявления пневмонии в Иркутской области",
+      "url": "https://irkutskmedia.ru/news/2642136/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "IrkutskMedia",
+      "title": "Роспотребнадзор опроверг сообщения о введении усиленного санитарного режима в Приангарье",
+      "url": "https://irkutskmedia.ru/news/2642180/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "Fontanka",
+      "title": "Роспотребнадзор Иркутской области опровергает введение ограничений — официальная информация",
+      "url": "https://www.fontanka.ru/2026/10/06/76680866/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "Prufy.ru",
+      "title": "Роспотребнадзор опроверг угрозу чумы в Иркутской области — но карантин в Шелехове остаётся в силе",
+      "url": "https://prufy.ru/news/society/193358-rospotrebnadzor_oproverg_ugrozu_chumy_v_irkutskoy_oblasti_no_karantin_v_shelekhove_ostayetsya_v_sile/",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-06",
+      "source": "Bloomberg via BusinessWorld",
+      "title": "What to know about plague after suspected Siberian lab worker case",
+      "url": "https://bworldonline.com/bloomberg/2026/10/06/784841/what-to-know-about-plague-after-suspected-siberian-lab-worker-case/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-05",
+      "source": "Interfax",
+      "title": "Роспотребнадзор сообщил о спокойной обстановке в Иркутской области",
+      "url": "https://www.interfax.ru/russia/1120505",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-05",
+      "source": "Сибновости",
+      "title": "У контактировавших с умершей сотрудницей Иркутского противочумного института выявили ковид и риновирус",
+      "url": "https://sibnovosti.ru/news/457888/",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-05",
+      "source": "Meduza",
+      "title": "Кремль призвал «не слушать разные слухи» о чуме в Иркутской области",
+      "url": "https://meduza.io/news/2026/10/05/kreml-prizval-ne-slushat-raznye-sluhi-o-chume-v-irkutskoy-oblasti",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-05",
+      "source": "Lenta.ru",
+      "title": "Кремль прокомментировал сообщения о чуме в России",
+      "url": "https://lenta.ru/news/2026/10/05/kreml-prokommentiroval-soobscheniya-o-chume-v-rossii/",
+      "tone": "neutral"
     }
   ],
   "context": [
@@ -391,27 +475,31 @@
   ],
   "watch": [
     {
-      "text": "Rospotrebnadzor confirming or ruling out Yersinia pestis by name, rather than leaving the diagnosis as pneumonia of undetermined etiology.",
+      "text": "Rospotrebnadzor confirming or ruling out Yersinia pestis by name, rather than leaving the diagnosis as pneumonia of undetermined etiology. The 5 October statement named only COVID-19 and rhinovirus among contacts and said no other pathogens were found, without naming Y. pestis.",
       "done": false
     },
     {
-      "text": "Any contact under observation developing symptoms or returning a positive test for the pathogen.",
+      "text": "Any contact under observation developing symptoms or returning a positive test for the pathogen. As of 5 October the only positives are 2 COVID-19 and 2 rhinovirus, which are incidental.",
       "done": false
     },
     {
-      "text": "The observation window ending. A seven-day window from the contacts' last exposure would close around 6 to 9 October; the three-week observation reported by one outlet would run to about 23 October. No official start or end date has been given.",
+      "text": "The observation window ending. Rospotrebnadzor says observation ended for 60% of contacts as of 5 October. No official start or end date has been given for the remaining 40%.",
       "done": false
     },
     {
-      "text": "A first official figure for contacts released from observation or discharged from hospital.",
+      "text": "A first official figure for contacts released from observation or discharged from hospital. Done in percentage form: Rospotrebnadzor said on 5 October that observation was completed for 60% of contacts.",
+      "done": true
+    },
+    {
+      "text": "An official absolute count of contacts, contacts released and contacts still under observation or in hospital, replacing the media-sourced 197 / 189 base and the derived 118 / 79 split.",
       "done": false
     },
     {
-      "text": "The Irkutsk regional health ministry or Rospotrebnadzor confirming or denying the reported hospital measures in Irkutsk city. Regional media (IrCity, 5 Oct) report city hospitals operating normally and the children's hospital denying a quarantine, but no ministry statement has been found.",
+      "text": "The Irkutsk regional health ministry or Rospotrebnadzor confirming or denying the reported hospital measures in Irkutsk city. On 6 October Rospotrebnadzor denied region-wide restrictions and called a circulating regime document a fake, but did not address individual hospitals; no regional health ministry statement has been found.",
       "done": false
     },
     {
-      "text": "The Shelekhov district hospital inpatient department reopening.",
+      "text": "The Shelekhov district hospital inpatient department reopening. Regional media report the quarantine still in force on 6 October.",
       "done": false
     },
     {
@@ -419,24 +507,27 @@
       "done": false
     },
     {
-      "text": "A WHO Disease Outbreak News, ECDC, ProMED or CDC item on the incident.",
+      "text": "A WHO Disease Outbreak News, ECDC, ProMED or CDC item on the incident. WHO issued a press statement through spokesperson Christian Lindmeier on 5 October (in contact with Russian authorities, risk low based on unofficial information) but no Disease Outbreak News item; the European Commission says it is in touch with ECDC, but no ECDC publication has appeared. Outbreak News Today has covered it.",
+      "done": false
+    },
+    {
+      "text": "A statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry.",
       "done": false
     }
   ],
   "unknowns": [
-    "The cause of death is officially undetermined; Rospotrebnadzor has published no named laboratory results.",
+    "The cause of death is officially undetermined; Rospotrebnadzor has published no named laboratory results for the deceased and has neither named nor excluded Yersinia pestis.",
     "The exposure (25 Sep), symptom onset (27 Sep) and hospitalisation (29 Sep or 1 Oct) dates rest on media and Telegram sourcing; no official timeline exists.",
-    "No figure exists for contacts released from observation or discharged.",
-    "No official end date for the observation period.",
-    "The 197 / 189 contact figures trace to one outlet's unnamed sources; officials have published no count.",
-    "No number of contacts tested or description of prophylaxis has been published.",
-    "No statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry.",
-    "Whether the institute is operating, closed or quarantined is unaddressed.",
-    "The scope of the Irkutsk city hospital measures is contested: regional media and fact-check outlets say hospitals operate normally, while The Insider and Meduza report at least three hospitals confirmed restrictions to journalists.",
+    "Rospotrebnadzor has given only a percentage (60%) of contacts released from observation; no absolute release, discharge or remaining count has been published, so the figures of about 118 released and about 79 remaining are derived from the media-sourced 197 base.",
+    "No official end date for the observation period of the remaining contacts has been published.",
+    "The 197 / 189 contact figures trace to one outlet's unnamed sources, repeated by the regional government paper OGIRK; officials have published no count.",
+    "No number of contacts tested and no description of prophylaxis has been published; the only named results are 2 COVID-19 and 2 rhinovirus cases.",
+    "No statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry; the institute's 21 to 22 October conference going ahead is the only indication it is operating, and the media-reported isolation of more than 60 staff has no official figure.",
+    "The scope of the Irkutsk city hospital measures is contested: regional media, fact-check outlets and bne IntelliNews report hospitals operating normally or denying quarantine, while The Insider, Meduza and Current Time report restrictions at several hospitals; Rospotrebnadzor's 6 October denial covers region-wide restrictions only.",
     "A criminal case is reported under Article 236 of the Criminal Code; the investigating body and the date it was opened are unconfirmed.",
     "The worker's age is reported as 27 or 28.",
-    "No WHO, ECDC, UKHSA, ProMED, CIDRAP or CDC item on the incident as of 5 Oct; the US State Department and White House statements are the only foreign-government items.",
-    "No Reuters or BBC item found; AP coverage appeared on 5 Oct."
+    "No WHO Disease Outbreak News, ECDC, UKHSA, ProMED, CIDRAP or CDC item as of 6 Oct; WHO's position exists only as a spokesperson statement, and the European Commission, US State Department, White House and Kazakhstan Health Ministry statements are the other government-level items.",
+    "No Reuters or BBC item found; AP, CNN, NBC, CBC, CNBC, Euronews and a Bloomberg explainer exist."
   ],
   "sources": [
     {
