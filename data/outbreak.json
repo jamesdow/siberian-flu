@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
   "origin_label": "since the reported test-tube break on 25 Sep, which officials have not confirmed",
-  "method_note": "Figures were taken only from the verified-facts list, which was checked against search-result snippets (page fetch unavailable). The >90% observation figure and the almost-5,000-test figure were each corroborated by at least three outlets carrying the Rospotrebnadzor press-service statement (Interfax, RIA, Fontanka, Vedomosti, News.ru). Because Rospotrebnadzor still publishes only percentages, the headline counts (1 death, 0 confirmed, 1 suspected, 197 under observation, 189 hospitalized, 0 symptomatic) are carried forward unchanged; the reported second employee is excluded from the suspected count because WHO has asked Russia to verify it and Russia has denied it. Alarmist headlines and headlines containing excluded words were left out; URLs already in the tracker were deduplicated.",
-  "status": "watching",
-  "status_note": "As of 8 October the latest official figures are Rospotrebnadzor's 7 October statement: observation complete for more than 90% of contacts, almost 5,000 tests with no dangerous pathogens and no illness among contacts, measures in Irkutsk and Shelekhov declared completed, the deceased described as vaccinated, and the cause of death still unnamed; the 197 / 189 contact base remains media-sourced. WHO said on 7 October it cannot complete a risk assessment, asked Russia to verify media reports of a second ill institute employee, and the Kremlin called the reports largely false; independent outlets report that Rospotrebnadzor's claim that WHO sees no risk differs from WHO's moderate-to-low grading.",
+  "method_note": "Figures were drawn only from verified facts dated 8 October: Rospotrebnadzor press-service statements relayed by RIA Novosti, TASS via Vedomosti, Interfax and Kommersant, and Governor Kobzev's video address as carried by IrCity, Lenta.ru, Vedomosti, Mediazona, The Insider and Radio Svoboda, each cross-checked against at least two outlets. Under_observation and hospitalized were set to 0 from the official statement that observation of all contacts is complete and quarantines in medical facilities are lifted, with no official absolute count published; deaths, confirmed, suspected and symptomatic are unchanged. Two confirmed headlines were redated or excluded where verification showed earlier dates (UN News is dated 7 October; Kommersant doc 9005850 is from 4 October), and roundup, digest and explainer items without verified facts were left out. Quotes come from search snippets because full article texts could not be fetched.",
+  "status": "contained",
+  "status_note": "Officials say the incident is over: on 8 October Rospotrebnadzor and Governor Kobzev said medical observation of all contacts is complete with nobody falling ill, the quarantine is lifted, reports of a second case are false, and almost 5,000 tests found no dangerous pathogens. The cause of death is still described only as pneumonia in a vaccinated worker; no pathogen has been named or excluded, no absolute contact count has been published, and WHO has not yet responded to the 8 October statements.",
   "counts": {
-    "as_of": "2026-10-07",
+    "as_of": "2026-10-08",
     "confirmed": 0,
     "deaths": 1,
-    "hospitalized": 189,
+    "hospitalized": 0,
     "suspected": 1,
     "symptomatic": 0,
-    "under_observation": 197
+    "under_observation": 0
   },
   "series": [
     {
@@ -181,6 +181,18 @@
       "note": "No new figure; carried forward. Rospotrebnadzor's 7 October statement raised the share of contacts whose medical observation is complete from 60% (5 October) to more than 90%, reported almost 5,000 laboratory tests with no dangerous pathogens and no infection-related illness among contacts, said two biosafety commissions found no accidents at the Anti-Plague Institute, said the deceased 28-year-old worker was vaccinated with stable immunity to the infections she worked with, declared the preventive and anti-epidemic measures in Irkutsk and Shelekhov completed, and said information was sent to WHO under the International Health Regulations. It still gives no absolute count of contacts, released contacts or remaining contacts, so the media-sourced 197 / 189 base is carried; applied to that base, roughly 177 or more are released and fewer than 20 remain. The cause of death remains unnamed and Yersinia pestis is neither confirmed nor excluded. WHO Director-General Tedros said on 7 October that WHO asked Russia to verify media reports of a second institute employee with pneumonia of undetermined cause and cannot complete a risk assessment without the full picture; the Kremlin called the reports largely false and pointed to Rospotrebnadzor. The second employee is not counted as suspected pending any official or verified report. The Insider and Agentstvo report that Rospotrebnadzor's claim that WHO sees no risk differs from WHO's own moderate-to-low grading for Irkutsk.",
       "note_short": "No new figure; carried forward. Rospotrebnadzor said on 7 October that observation is complete for more than 90% of contacts, almost 5,000 tests found no dangerous pathogens and measures in Irkutsk and Shelekhov are finished, while WHO asked Russia to verify reports of a second ill employee and said it cannot complete a risk assessment.",
       "source_url": "https://www.interfax.ru/russia/1120505"
+    },
+    {
+      "date": "2026-10-09",
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "note": "No new figure for deaths, confirmed, suspected or symptomatic; carried forward. Under observation and hospitalized set to 0 because Rospotrebnadzor and Governor Kobzev said on 8 October that medical observation of all contacts is complete, the quarantine in medical facilities including the Shelekhov district hospital is lifted and no infection-related health problems were found; the zero is derived from official statements in words, not from a published count, and the 197 / 189 base remains media-sourced. Rospotrebnadzor on 8 October officially denied reports of a second case, repeated that almost 5,000 tests found no dangerous pathogens, that the deceased was vaccinated and that no accidents occurred at the institute, and again did not name the cause of death. Kobzev described the illness as community-acquired pneumonia. Roskomnadzor warned media of liability for false information about the situation. No new WHO statement dated 8 or 9 October was found.",
+      "note_short": "Officials say observation of all contacts is complete and the quarantine is lifted; the cause of death is still unnamed.",
+      "source_url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html"
     }
   ],
   "timeline": [
@@ -465,105 +477,147 @@
       "text": "Al Jazeera reported that Russia dismissed media reports of a second suspected plague case as false information and that WHO urged a formal response under the International Health Regulations.",
       "source_name": "Al Jazeera",
       "source_url": "https://www.aljazeera.com/news/2026/10/8/russia-dismisses-reports-of-second-plague-case-as-false-information"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Rospotrebnadzor's press service, via TASS and RIA Novosti, said that information about a second case of illness in Irkutsk does not correspond to reality, that medical observation of all contacts is complete with no infection-related health problems found, that almost 5,000 laboratory tests found no dangerous pathogens, and that WHO also does not confirm having information about new cases; it assessed the situation in Irkutsk, Shelekhov and the oblast as calm and again did not name the cause of death.",
+      "source_name": "RIA Novosti",
+      "source_url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Rospotrebnadzor, cited by TASS, explained that the full complex of anti-epidemic measures under sanitary legislation was carried out because of the deceased's professional activity, stating that she was vaccinated and had immunity to especially dangerous infections.",
+      "source_name": "Vedomosti",
+      "source_url": "https://www.vedomosti.ru/society/news/2026/10/08/1235565-rospotrebnadzor-obyasnil"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Governor Igor Kobzev said in an evening video address that the quarantine is lifted, all preventive measures are complete and medical observation of all contacts has ended with nobody falling ill; he described the illness as community-acquired pneumonia, said the deceased was vaccinated with immunity to the dangerous infections she worked with, and said the expert commission and Rospotrebnadzor found no accidents at the institute. Media put the number isolated at about 200.",
+      "source_name": "IrCity",
+      "source_url": "https://ircity.ru/text/health/2026/10/08/76688232/"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Kobzev said quarantines introduced in medical facilities, including the Shelekhov district hospital, have been lifted and the region is working in normal mode.",
+      "source_name": "Radio Svoboda (RFE/RL)",
+      "source_url": "https://www.svoboda.org/a/v-irkutske-i-oblasti-snyali-karantiny-nikto-ne-zabolel-chumoy/33873005.html"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Kobzev said WHO had publicly confirmed there are no health risks to citizens; The Moscow Times and other independent outlets noted that the cause of the pneumonia remains unnamed and that WHO's Director-General had said the day before that it lacked a full picture.",
+      "source_name": "The Moscow Times (Russian service)",
+      "source_url": "https://ru.themoscowtimes.com/2026/10/08/irkutskii-gubernator-zayavil-o-snyatii-karantina-nesmotrya-na-vozmozhnuyu-vspishku-chumi-a208166"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "Roskomnadzor warned media of liability and possible blocking for spreading knowingly false information about the sanitary-epidemiological situation in Irkutsk Oblast and said it will analyse publications and may demand removal of material.",
+      "source_name": "Fontanka",
+      "source_url": "https://www.fontanka.ru/2026/10/08/76688442/"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "AP reported that Rospotrebnadzor denied a second infection and said there are no epidemic risks for Irkutsk and the region, that WHO still does not know the causative agent, and that Kremlin spokesman Peskov urged reliance on Rospotrebnadzor; the agency's statement gave no new details on the worker's illness and death.",
+      "source_name": "AP via ABC News",
+      "source_url": "https://abcnews.com/International/wireStory/russias-public-health-watchdog-denies-infection-suspected-pneumonic-137088923"
     }
   ],
   "headlines": [
     {
       "date": "2026-10-08",
-      "source": "Al Jazeera",
-      "title": "Russia dismisses reports of second plague case, WHO urges formal response",
-      "url": "https://www.aljazeera.com/news/2026/10/8/russia-dismisses-reports-of-second-plague-case-as-false-information",
-      "tone": "neutral"
+      "source": "РИА Новости",
+      "title": "Роспотребнадзор опроверг информацию о втором случае заболевания в Иркутске",
+      "url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "Коммерсантъ",
+      "title": "Роспотребнадзор опроверг данные о втором случае заболевания в Иркутской области",
+      "url": "https://www.kommersant.ru/doc/9008971",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "Ведомости",
+      "title": "Роспотребнадзор опроверг фейки о заболеваниях в Иркутске",
+      "url": "https://www.vedomosti.ru/society/news/2026/10/08/1235359-rospotrebnadzor-oproverg-feiki",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "Ведомости",
+      "title": "Роспотребнадзор объяснил противоэпидемические мероприятия в Иркутске",
+      "url": "https://www.vedomosti.ru/society/news/2026/10/08/1235565-rospotrebnadzor-obyasnil",
+      "tone": "sober"
     },
     {
       "date": "2026-10-08",
       "source": "IrCity",
-      "title": "Трамп заявил, что Россия информирует США о пневмонии в Иркутской области",
-      "url": "https://ircity.ru/text/society/2026/10/08/76686324",
+      "title": "Роспотребнадзор завершил мероприятия из-за пневмонии в Иркутской области",
+      "url": "https://ircity.ru/text/health/2026/10/08/76687795/",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "IrCity",
+      "title": "«Это было испытание». Губернатор заявил о снятии карантина спустя неделю после гибели девушки в Шелехове",
+      "url": "https://ircity.ru/text/health/2026/10/08/76688232/",
       "tone": "neutral"
     },
     {
       "date": "2026-10-08",
-      "source": "Vedomosti",
-      "title": "Что значат вспышки слухов о чуме в Иркутской области",
-      "url": "https://www.vedomosti.ru/society/articles/2026/10/08/1235223-chto-znachat-vspishki-sluhov-o-chume",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "Interfax",
-      "title": "Роспотребнадзор направил в ВОЗ информацию о ситуации в Иркутской области",
-      "url": "https://www.interfax.ru/russia/1120860",
+      "source": "Lenta.ru",
+      "title": "Губернатор раскрыл подробности о заболевшей сотруднице иркутского противочумного института",
+      "url": "https://lenta.ru/news/2026/10/08/gubernator-raskryl-podrobnosti-o-zabolevshey-sotrudnitse-irkutskogo-protivochumnogo-instituta/",
       "tone": "neutral"
     },
     {
-      "date": "2026-10-07",
-      "source": "RIA Novosti",
-      "title": "В Приангарье не выявили опасных микроорганизмов у контактных лиц",
-      "url": "https://ria.ru/20261007/priangarja-2122930702.html",
+      "date": "2026-10-08",
+      "source": "BFM.ru",
+      "title": "Кобзев: в противочумном институте Иркутска не выявили аварийных ситуаций",
+      "url": "https://www.bfm.ru/news/620300",
       "tone": "sober"
     },
     {
-      "date": "2026-10-07",
-      "source": "Interfax",
-      "title": "Роспотребнадзор сообщил о спокойной обстановке в Иркутской области",
-      "url": "https://www.interfax.ru/russia/1120505",
+      "date": "2026-10-08",
+      "source": "Взгляд",
+      "title": "Роспотребнадзор завершил связанные с пневмонией мероприятия в Иркутской области",
+      "url": "https://vz.ru/news/2026/10/8/1460404.html",
       "tone": "sober"
     },
     {
-      "date": "2026-10-07",
-      "source": "AiF Irkutsk",
-      "title": "Роспотребнадзор заявил о завершении профилактических мероприятий в Иркутске",
-      "url": "https://irk.aif.ru/society/rospotrebnadzor-zayavil-o-zavershenii-profilakticheskih-meropriyatiy-v-irkutske",
+      "date": "2026-10-08",
+      "source": "Интерфакс",
+      "title": "Роскомнадзор разберется с фейками об эпидемиологической ситуации в Иркутской области",
+      "url": "https://www.interfax.ru/russia/1121213",
       "tone": "sober"
     },
     {
-      "date": "2026-10-07",
-      "source": "Fontanka.ru",
-      "title": "Почти 5 тысяч анализов и больше 90% проверенных контактных. Что известно о ситуации в Иркутске",
-      "url": "https://www.fontanka.ru/2026/10/07/76685407/",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "News.ru",
-      "title": "Роспотребнадзор: наблюдение 90% контактных в Иркутской области завершено",
-      "url": "https://news.ru/regions/rospotrebnadzor-nablyudenie-90-kontaktnyh-v-irkutskoj-oblasti-zaversheno",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "Vedomosti",
-      "title": "Роспотребнадзор рассказал о состоянии контактировавших с заболевшей в Иркутске",
-      "url": "https://www.vedomosti.ru/society/news/2026/10/07/1235072-o-kontaktirovavshih",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "Rossiyskaya Gazeta",
-      "title": "Роспотребнадзор направил в ВОЗ информацию о ситуации в Иркутской области",
-      "url": "https://rg.ru/2026/10/07/rospotrebnadzor-napravil-v-voz-informaciiu-o-situacii-v-irkutskoj-oblasti.html",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "Life.ru",
-      "title": "Роспотребнадзор заявил о спокойной эпидобстановке в Иркутской области",
-      "url": "https://life.ru/p/rospotrebnadzor-zayavil-o-spokoynoy-epidobstanovke-v-irkutskoy-oblasti",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-07",
-      "source": "The Moscow Times (Russian service)",
-      "title": "Роспотребнадзор заявил, что не нашел опасных бактерий в Иркутской области, не уточнив причин смерти сотрудницы противочумного института",
-      "url": "https://ru.themoscowtimes.com/2026/10/07/rospotrebnadzor-zayavil-chto-ne-nashel-opasnih-bakterii-v-irkutskoi-oblasti-ne-utochniv-prichin-smerti-sotrudnitsi-protivochumnogo-instituta-a208040",
+      "date": "2026-10-08",
+      "source": "Фонтанка",
+      "title": "Роскомнадзор предупреждает СМИ о блокировках за фейки о ситуации в Иркутской области",
+      "url": "https://www.fontanka.ru/2026/10/08/76688442/",
       "tone": "neutral"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "source": "The Moscow Times (Russian service)",
-      "title": "ВОЗ попросила Россию разъяснить сообщения о втором заболевшем сотруднике противочумного института",
-      "url": "https://ru.themoscowtimes.com/2026/10/07/voz-poprosila-rossiyu-razyasnit-soobscheniya-ovtorom-zabolevshem-sotrudnike-protivochumnogo-instituta-a207989",
+      "title": "Роспотребнадзор опроверг второй случай заболевания в Иркутске, связанный с противочумным НИИ",
+      "url": "https://ru.themoscowtimes.com/2026/10/08/rospotrebnadzor-oproverg-vtoroy-sluchay-zabolevaniya-v-irkutske-svyazannyy-s-protivochumnym-nii-a208145",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "The Insider",
+      "title": "Власти Иркутской области сняли карантин после смерти сотрудницы противочумного института",
+      "url": "https://theins.ru/news/298056",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "Медиазона",
+      "title": "Губернатор объявил о снятии карантина в Иркутской области из‑за смерти сотрудницы противочумного института",
+      "url": "https://zona.media/news/2026/10/08/karantin",
       "tone": "neutral"
     }
   ],
@@ -601,87 +655,58 @@
   ],
   "watch": [
     {
-      "text": "Rospotrebnadzor confirming or ruling out Yersinia pestis by name, rather than leaving the diagnosis as pneumonia of undetermined etiology. Its 7 October statement again did not name the cause of death and said only that expanded tests found no microorganisms linked to her professional activity and that she was vaccinated; no laboratory exclusion of Y. pestis for the deceased has been published.",
+      "text": "Rospotrebnadzor or the Health Ministry naming the cause of death, confirming or ruling out Yersinia pestis.",
       "done": false
     },
     {
-      "text": "Russia telling WHO which pathogen caused the pneumonia. WHO asked on 6 October and repeated on 7 October that it has not been told and cannot complete a risk assessment; Rospotrebnadzor says it sent information to WHO under the IHR on 7 October, content unpublished.",
+      "text": "WHO's response to Russia's 8 October statements, and whether it publishes its risk assessment in writing.",
       "done": false
     },
     {
-      "text": "Verification or official denial of the media reports of a second Anti-Plague Institute employee with pneumonia of undetermined cause. WHO asked Russia to verify on 7 October; the Kremlin called the reports largely false and Al Jazeera reports Russia dismissed them as false information, but no Rospotrebnadzor statement on the second employee has been seen.",
+      "text": "An official absolute count of contacts, contacts released and tests performed.",
       "done": false
     },
     {
-      "text": "Any contact under observation developing symptoms or returning a positive test for the pathogen. As of 7 October Rospotrebnadzor reports almost 5,000 tests with no dangerous pathogens and no infection-related illness among contacts; the only positives remain 2 COVID-19 and 2 rhinovirus.",
+      "text": "Any contact or institute employee falling ill after the end of observation.",
       "done": false
     },
     {
-      "text": "The observation window ending for all contacts. Rospotrebnadzor says observation is complete for more than 90% of contacts as of 7 October (60% on 5 October); no end date has been given for the remainder.",
+      "text": "An official source naming the body investigating the Article 236 criminal case.",
       "done": false
     },
     {
-      "text": "A first official figure for contacts released from observation or discharged from hospital. Done in percentage form: Rospotrebnadzor said on 5 October that observation was completed for 60% of contacts, and on 7 October for more than 90%.",
+      "text": "The observation window ending for all contacts. Done: Rospotrebnadzor and the governor said on 8 October that observation of all contacts is complete.",
       "done": true
     },
     {
-      "text": "An official absolute count of contacts, contacts released and contacts still under observation or in hospital, replacing the media-sourced 197 / 189 base and the derived split (roughly 177 or more released, fewer than 20 remaining, as of 7 October).",
-      "done": false
-    },
-    {
-      "text": "Rospotrebnadzor declaring the preventive and anti-epidemic measures completed. Done: declared on 7 October for Irkutsk and Shelekhov, with the situation assessed as calm.",
+      "text": "Verification or official denial of the reports of a second ill employee. Done: Rospotrebnadzor denied them on 8 October.",
       "done": true
     },
     {
-      "text": "The Irkutsk regional health ministry or Rospotrebnadzor confirming or denying the reported hospital measures in Irkutsk city. The regional government press service said on 5 October that all Irkutsk hospitals operate normally, Rospotrebnadzor denied region-wide restrictions on 6 October and declared measures completed on 7 October; no regional health ministry statement has been found.",
-      "done": false
-    },
-    {
-      "text": "The Shelekhov district hospital inpatient department reopening. Deputy district head Sofina said on 6 October that 60% of those quarantined had been discharged; no official reopening report found as of 8 October.",
-      "done": false
-    },
-    {
-      "text": "An official source naming the body investigating the Article 236 criminal case, or confirming the date it was opened.",
-      "done": false
+      "text": "The Shelekhov district hospital quarantine lifted. Done on 8 October.",
+      "done": true
     },
     {
       "text": "An ECDC publication on the incident. Done: ECDC published a news item on 6 October.",
       "done": true
-    },
-    {
-      "text": "A WHO Disease Outbreak News, ProMED, CIDRAP, UKHSA or CDC item on the incident. WHO has so far spoken through Director-General statements and briefings (6 and 7 October) and says it cannot complete a risk assessment; no Disease Outbreak News item as of 8 October.",
-      "done": false
-    },
-    {
-      "text": "A statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry. Rospotrebnadzor said on 7 October that two biosafety commissions found no accidents at the institute, but the institute itself has not spoken.",
-      "done": false
-    },
-    {
-      "text": "The outcome of the EU Health Security Committee discussion on 7 October, if published. Nothing found as of 8 October.",
-      "done": false
-    },
-    {
-      "text": "A WHO publication stating its risk grading in writing, which would settle the dispute over Rospotrebnadzor's claim that WHO sees no risk to residents versus the moderate-to-low grading reported from the 6 October briefing.",
-      "done": false
     }
   ],
   "unknowns": [
-    "The cause of death is officially undetermined; Rospotrebnadzor's 7 October statement again did not name laboratory results for the deceased and has neither named nor excluded Yersinia pestis. Russia told WHO no plague case has been recorded, but WHO said on 7 October it still does not know the pathogen and cannot complete a risk assessment.",
-    "Media reports of a second Anti-Plague Institute employee with pneumonia of undetermined cause are unverified; WHO asked Russia to verify them on 7 October, the Kremlin called media reports largely false, and no official Russian statement specifically on a second employee has been seen.",
+    "The cause of death is officially undetermined; Rospotrebnadzor's 8 October statements again did not name laboratory results for the deceased and have neither named nor excluded Yersinia pestis, while Governor Kobzev called the illness community-acquired pneumonia without naming a pathogen. Russia told WHO no plague case has been recorded, but WHO said on 7 October it still does not know the pathogen and cannot complete a risk assessment, and no WHO statement dated 8 or 9 October has been found.",
     "The exposure (25 Sep), symptom onset (27 Sep) and hospitalisation (29 Sep or 1 Oct) dates rest on media and Telegram sourcing; no official timeline exists.",
-    "Rospotrebnadzor has given only percentages (60% on 5 October, more than 90% on 7 October) of contacts whose observation is complete; no absolute release, discharge or remaining count has been published, so the derived figures of roughly 177 or more released and fewer than 20 remaining rest on the media-sourced 197 base.",
-    "No official end date for the observation period of the remaining contacts has been published, although Rospotrebnadzor declared the preventive and anti-epidemic measures completed on 7 October.",
-    "The 197 / 189 contact figures trace to one outlet's unnamed sources, repeated by the regional government paper OGIRK and federal outlets; officials have published no count.",
+    "Rospotrebnadzor and Kobzev say observation of all contacts is complete, but no absolute count of contacts, releases or discharges has been published; the media figure of about 200 isolated and the 197 / 189 base trace to unnamed sources repeated by regional and federal outlets.",
     "Rospotrebnadzor reports almost 5,000 laboratory tests among contacts with no dangerous pathogens but has not said which pathogens were tested for or how many people were tested, and has published no description of prophylaxis; the only named results are 2 COVID-19 and 2 rhinovirus cases.",
-    "No statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry; Rospotrebnadzor says two biosafety commissions found no accidents at the institute, but the media-reported isolation of more than 60 staff has no official figure.",
+    "Rospotrebnadzor's 8 October denial of a second case refers to a contact of the deceased; whether any other institute employee was examined for pneumonia has not been addressed directly, and WHO has not said whether it accepts the denial.",
+    "No statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry; Rospotrebnadzor and Kobzev say commissions found no accidents at the institute, but the media-reported isolation of more than 60 staff has no official figure.",
     "The content of the information Rospotrebnadzor says it sent to WHO under the IHR on 7 October has not been published, and WHO said the same day it lacked the full picture.",
-    "The scope of the Irkutsk city hospital measures is contested: the regional government press service (5 Oct) and fact-check outlets say hospitals operate normally, while The Insider, Meduza and Current Time reported restrictions at several hospitals; Rospotrebnadzor's 6 October denial covers region-wide restrictions only, and the US Embassy alert refers to press reports of hospital closures.",
-    "Whether the Shelekhov district hospital inpatient department has reopened is unconfirmed; Sofina said on 6 October that 60% of those quarantined were discharged.",
-    "A criminal case is reported under Article 236 of the Criminal Code; the investigating body and the date it was opened are unconfirmed.",
-    "The worker's name (Darya Shipilova) is media-sourced; Rospotrebnadzor gave her age as 28 on 7 October and said she was vaccinated, without naming the vaccine.",
-    "The WHO risk grading (moderate to low for Irkutsk, low for Russia, very low for the WHO European Region) is reported from the 6 October briefing but has not been seen in a WHO document; Rospotrebnadzor's 7 October claim that WHO sees no risk to residents is disputed by The Insider and Agentstvo.",
-    "No WHO Disease Outbreak News, UKHSA, ProMED, CIDRAP or CDC item as of 8 Oct; ECDC published a news item on 6 Oct and no outcome of the 7 Oct EU Health Security Committee discussion has been found.",
-    "No Reuters or BBC item found; AP, CNN, NBC, CBC, CNBC, PBS, Euronews, Al Jazeera, Global News and a Bloomberg explainer exist."
+    "The scope of the Irkutsk city hospital measures is still not officially described: Kobzev said on 8 October that quarantines in medical facilities were lifted, while the regional government press service had said on 5 October that hospitals operated normally; no regional health ministry statement has been found.",
+    "Whether the Shelekhov district hospital inpatient department has resumed admissions is confirmed only by Kobzev's general statement that quarantines in medical facilities are lifted; no hospital-level statement has been found.",
+    "A criminal case is reported under Article 236 of the Criminal Code; the investigating body, the date it was opened and its current status are unconfirmed.",
+    "The worker's name (Darya Shipilova) is media-sourced; Rospotrebnadzor gave her age as 28 and said she was vaccinated with immunity to especially dangerous infections, without naming the vaccine.",
+    "The WHO risk grading (moderate to low for Irkutsk, low for Russia, very low for the WHO European Region) is reported from the 6 October briefing but has not been seen in a WHO document; the Russian claim that WHO sees no risk to residents, repeated by Kobzev on 8 October, is disputed by The Insider, Agentstvo and The Moscow Times.",
+    "Which publications Roskomnadzor considers knowingly false, and whether it has demanded removals or blocked any outlet, has not been stated.",
+    "No WHO Disease Outbreak News, UKHSA, ProMED, CIDRAP or CDC item as of 9 Oct; ECDC published a news item on 6 Oct and no outcome of the 7 Oct EU Health Security Committee discussion has been found.",
+    "No BBC item found and no Reuters item confirmed with a URL; AP, CNN, NBC, CBC, CNBC, PBS, Euronews, Al Jazeera, Global News, UN News and a Bloomberg explainer exist."
   ],
   "sources": [
     {
