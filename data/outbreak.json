@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
   "origin_label": "since the reported test-tube break on 25 Sep, which officials have not confirmed",
-  "method_note": "Figures were drawn only from verified facts dated 8 October: Rospotrebnadzor press-service statements relayed by RIA Novosti, TASS via Vedomosti, Interfax and Kommersant, and Governor Kobzev's video address as carried by IrCity, Lenta.ru, Vedomosti, Mediazona, The Insider and Radio Svoboda, each cross-checked against at least two outlets. Under_observation and hospitalized were set to 0 from the official statement that observation of all contacts is complete and quarantines in medical facilities are lifted, with no official absolute count published; deaths, confirmed, suspected and symptomatic are unchanged. Two confirmed headlines were redated or excluded where verification showed earlier dates (UN News is dated 7 October; Kommersant doc 9005850 is from 4 October), and roundup, digest and explainer items without verified facts were left out. Quotes come from search snippets because full article texts could not be fetched.",
+  "method_note": "Figures were checked against 11 verified facts and 20 confirmed headlines from two search sweeps (33 WebSearch queries in Russian and English; WebFetch and curl unavailable, so quotes come from search snippets). No Rospotrebnadzor, Irkutsk government, Kobzev, Health Ministry, institute, Shelekhov hospital, WHO, ECDC, ProMED or CIDRAP statement dated 9 or 10 October was found, so all counts are carried forward from the 8 October statements. The 9 October items (Xinhua, Bloomberg, NPR, Kyiv Post, CGTN, Bernama, Teleport2001, IrCity) were confirmed to restate the 8 October positions without new figures; the Bloomberg WHO passage is medium confidence because only the article opening was visible. Low-reliability aggregator sites and an ircity.ru snippet that resolved to a 4 October article were excluded, as was the Nature World News aggregator headline.",
   "status": "contained",
-  "status_note": "Officials say the incident is over: on 8 October Rospotrebnadzor and Governor Kobzev said medical observation of all contacts is complete with nobody falling ill, the quarantine is lifted, reports of a second case are false, and almost 5,000 tests found no dangerous pathogens. The cause of death is still described only as pneumonia in a vaccinated worker; no pathogen has been named or excluded, no absolute contact count has been published, and WHO has not yet responded to the 8 October statements.",
+  "status_note": "As of 10 October the latest official positions remain those of 8 October: Rospotrebnadzor and Governor Kobzev say observation of all contacts is complete with nobody falling ill, the quarantine is lifted, reports of a second case are false and almost 5,000 tests found no dangerous pathogens. No official or WHO statement dated 9 or 10 October has been found; the cause of death is still described only as pneumonia in a vaccinated worker, no pathogen has been named or excluded, no absolute contact count has been published, and WHO's request for further information remains outstanding.",
   "counts": {
     "as_of": "2026-10-08",
     "confirmed": 0,
@@ -193,6 +193,18 @@
       "note": "No new figure for deaths, confirmed, suspected or symptomatic; carried forward. Under observation and hospitalized set to 0 because Rospotrebnadzor and Governor Kobzev said on 8 October that medical observation of all contacts is complete, the quarantine in medical facilities including the Shelekhov district hospital is lifted and no infection-related health problems were found; the zero is derived from official statements in words, not from a published count, and the 197 / 189 base remains media-sourced. Rospotrebnadzor on 8 October officially denied reports of a second case, repeated that almost 5,000 tests found no dangerous pathogens, that the deceased was vaccinated and that no accidents occurred at the institute, and again did not name the cause of death. Kobzev described the illness as community-acquired pneumonia. Roskomnadzor warned media of liability for false information about the situation. No new WHO statement dated 8 or 9 October was found.",
       "note_short": "Officials say observation of all contacts is complete and the quarantine is lifted; the cause of death is still unnamed.",
       "source_url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html"
+    },
+    {
+      "date": "2026-10-10",
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "note": "No new figure; carried forward. No official statement dated 9 or 10 October was found from Rospotrebnadzor, Governor Kobzev, the federal or regional Health Ministry, the Anti-Plague Institute or WHO; the latest official positions remain those of 8 October (observation of all contacts complete, quarantine lifted, nearly 5,000 tests with no dangerous pathogens, second case denied, cause of death pneumonia). The 9 October coverage (Xinhua, Bloomberg, NPR, Kyiv Post, CGTN, Bernama, regional Russian recaps) restates the 8 October statements; Bloomberg restates WHO's position that it has requested further information on the cause of the pneumonia, the pathogen that prompted the measures and the reports of a second employee. Sirens heard in Irkutsk on 9 October were a scheduled nationwide test of the public warning system.",
+      "note_short": "No new figure; the 9 October coverage restates the 8 October statements and no official or WHO statement dated 9 or 10 October was found.",
+      "source_url": "https://english.news.cn/20261009/3407739421d34a0582d0b1383854f8f3/c.html"
     }
   ],
   "timeline": [
@@ -519,106 +531,130 @@
       "text": "AP reported that Rospotrebnadzor denied a second infection and said there are no epidemic risks for Irkutsk and the region, that WHO still does not know the causative agent, and that Kremlin spokesman Peskov urged reliance on Rospotrebnadzor; the agency's statement gave no new details on the worker's illness and death.",
       "source_name": "AP via ABC News",
       "source_url": "https://abcnews.com/International/wireStory/russias-public-health-watchdog-denies-infection-suspected-pneumonic-137088923"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Sirens heard across Irkutsk were a scheduled nationwide test of the public warning system, not related to the incident; regional outlet IrCity published an explainer to counter rumours.",
+      "source_name": "IrCity",
+      "source_url": "https://ircity.ru/text/gorod/2026/10/09/76688591/"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Bloomberg reported that Russia ended the Irkutsk health measures after nearly 5,000 tests found no dangerous pathogens, and that WHO, which was told by Russia on 6 October there was no evidence pneumonic plague played a part, has still requested further information on the cause of the severe pneumonia, the pathogen that prompted the measures and the reports of a second employee.",
+      "source_name": "Bloomberg",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-10-09/russia-ends-irkutsk-health-measures-as-tests-find-no-pathogens"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "NPR published an analysis of whether Russia met its reporting obligations under the International Health Regulations for the worker's death; it reported no new Russian or WHO figures.",
+      "source_name": "NPR",
+      "source_url": "https://www.npr.org/2026/10/09/g-s1-147295/russia-lab-death-pneumonia-plague"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Xinhua, CGTN, Bernama and China.org.cn carried wire reports that Governor Kobzev declared the preventive measures complete, repeating the Rospotrebnadzor figures of more than 90% of contacts having finished observation and nearly 5,000 tests with no dangerous pathogens; no figures newer than 8 October were given.",
+      "source_name": "Xinhua",
+      "source_url": "https://english.news.cn/20261009/3407739421d34a0582d0b1383854f8f3/c.html"
     }
   ],
   "headlines": [
     {
-      "date": "2026-10-08",
-      "source": "РИА Новости",
-      "title": "Роспотребнадзор опроверг информацию о втором случае заболевания в Иркутске",
-      "url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html",
+      "date": "2026-10-09",
+      "source": "Xinhua",
+      "title": "Russia lifts preventive measures in Irkutsk after pneumonia death",
+      "url": "https://english.news.cn/20261009/3407739421d34a0582d0b1383854f8f3/c.html",
       "tone": "sober"
     },
     {
-      "date": "2026-10-08",
-      "source": "Коммерсантъ",
-      "title": "Роспотребнадзор опроверг данные о втором случае заболевания в Иркутской области",
-      "url": "https://www.kommersant.ru/doc/9008971",
+      "date": "2026-10-09",
+      "source": "Bloomberg",
+      "title": "Russia Finds No Plague or Other Pathogens in Siberia Lab Death",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-09/russia-ends-irkutsk-health-measures-as-tests-find-no-pathogens",
       "tone": "sober"
     },
     {
-      "date": "2026-10-08",
-      "source": "Ведомости",
-      "title": "Роспотребнадзор опроверг фейки о заболеваниях в Иркутске",
-      "url": "https://www.vedomosti.ru/society/news/2026/10/08/1235359-rospotrebnadzor-oproverg-feiki",
+      "date": "2026-10-09",
+      "source": "NPR",
+      "title": "Did Russia play by the rules in reporting lab worker's death?",
+      "url": "https://www.npr.org/2026/10/09/g-s1-147295/russia-lab-death-pneumonia-plague",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-09",
+      "source": "Kyiv Post",
+      "title": "Russia Ends Irkutsk Quarantine Despite Unresolved Plague Questions",
+      "url": "https://www.kyivpost.com/post/86575",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-09",
+      "source": "CGTN",
+      "title": "Quarantine measures completed in Russia's Irkutsk region after lab worker's death",
+      "url": "https://news.cgtn.com/news/2026-10-09/Quarantine-completed-in-Russia-s-Irkutsk-after-lab-worker-s-death-1R5QbwUlFfy/share_amp.html",
       "tone": "sober"
     },
     {
-      "date": "2026-10-08",
-      "source": "Ведомости",
-      "title": "Роспотребнадзор объяснил противоэпидемические мероприятия в Иркутске",
-      "url": "https://www.vedomosti.ru/society/news/2026/10/08/1235565-rospotrebnadzor-obyasnil",
+      "date": "2026-10-09",
+      "source": "Bernama",
+      "title": "Russia's Irkutsk Lifts Preventive Measures After Lab Worker's Death From Pneumonia",
+      "url": "https://www.bernama.com/en/world/news.php?id=2617687",
       "tone": "sober"
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-09",
+      "source": "Teleport2001",
+      "title": "Внебольничная пневмония, а не чума диагностирована в Иркутской области",
+      "url": "https://www.teleport2001.ru/news/2026-10-09/219889-chuma-v-irkutskoy-oblasti-raskryta-vsya-pravda-gromkogo-incidenta.html",
+      "tone": "sober"
+    },
+    {
+      "date": "2026-10-09",
       "source": "IrCity",
-      "title": "Роспотребнадзор завершил мероприятия из-за пневмонии в Иркутской области",
-      "url": "https://ircity.ru/text/health/2026/10/08/76687795/",
+      "title": "Что за сирены воют в Иркутске: видео",
+      "url": "https://ircity.ru/text/gorod/2026/10/09/76688591/",
       "tone": "sober"
     },
     {
       "date": "2026-10-08",
-      "source": "IrCity",
-      "title": "«Это было испытание». Губернатор заявил о снятии карантина спустя неделю после гибели девушки в Шелехове",
-      "url": "https://ircity.ru/text/health/2026/10/08/76688232/",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-08",
-      "source": "Lenta.ru",
-      "title": "Губернатор раскрыл подробности о заболевшей сотруднице иркутского противочумного института",
-      "url": "https://lenta.ru/news/2026/10/08/gubernator-raskryl-podrobnosti-o-zabolevshey-sotrudnitse-irkutskogo-protivochumnogo-instituta/",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-08",
-      "source": "BFM.ru",
-      "title": "Кобзев: в противочумном институте Иркутска не выявили аварийных ситуаций",
-      "url": "https://www.bfm.ru/news/620300",
+      "source": "Радио Свобода",
+      "title": "В Иркутске и области сняли карантины, никто не заболел чумой",
+      "url": "https://www.svoboda.org/a/v-irkutske-i-oblasti-snyali-karantiny-nikto-ne-zabolel-chumoy/33873005.html",
       "tone": "sober"
     },
     {
       "date": "2026-10-08",
-      "source": "Взгляд",
-      "title": "Роспотребнадзор завершил связанные с пневмонией мероприятия в Иркутской области",
-      "url": "https://vz.ru/news/2026/10/8/1460404.html",
+      "source": "Настоящее Время",
+      "title": "В Иркутской области сняли карантин, введенный после смерти сотрудницы противочумного института",
+      "url": "https://www.currenttime.tv/a/v-irkutskoy-oblasti-snyali-karantin/33873056.html",
       "tone": "sober"
     },
     {
       "date": "2026-10-08",
-      "source": "Интерфакс",
-      "title": "Роскомнадзор разберется с фейками об эпидемиологической ситуации в Иркутской области",
-      "url": "https://www.interfax.ru/russia/1121213",
+      "source": "Эхо",
+      "title": "В Иркутской области сняли карантин. Власти по-прежнему отрицают заболевание чумой",
+      "url": "https://echofm.online/news/v-irkutskoj-oblasti-snyali-karantin-vlasti-po-prezhnemu-otriczayut-zabolevanie-chumoj",
+      "tone": "neutral"
+    },
+    {
+      "date": "2026-10-08",
+      "source": "Новая газета Европа",
+      "title": "«Из хорошего — отменили субботники». Эксперты в один голос утверждают, что эпидемии чумы в Иркутской области не предвидится. А что думают сами жители?",
+      "url": "https://novayagazeta.eu/articles/2026/10/08/iz-khoroshego-otmenili-subbotniki",
       "tone": "sober"
     },
     {
       "date": "2026-10-08",
-      "source": "Фонтанка",
-      "title": "Роскомнадзор предупреждает СМИ о блокировках за фейки о ситуации в Иркутской области",
-      "url": "https://www.fontanka.ru/2026/10/08/76688442/",
+      "source": "Meduza",
+      "title": "«Это было испытание, но мы его прошли достойно». Власти Иркутской области отчитались, что завершили проверку после смерти сотрудницы противочумного института",
+      "url": "https://meduza.io/news/2026/10/08/eto-bylo-ispytanie-no-my-ego-proshli-dostoyno-vlasti-irkutskoy-oblasti-otchitalis-chto-zavershili-proverku-posle-smerti-sotrudnitsy-protivochumnogo-instituta",
       "tone": "neutral"
     },
     {
       "date": "2026-10-08",
-      "source": "The Moscow Times (Russian service)",
-      "title": "Роспотребнадзор опроверг второй случай заболевания в Иркутске, связанный с противочумным НИИ",
-      "url": "https://ru.themoscowtimes.com/2026/10/08/rospotrebnadzor-oproverg-vtoroy-sluchay-zabolevaniya-v-irkutske-svyazannyy-s-protivochumnym-nii-a208145",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-08",
-      "source": "The Insider",
-      "title": "Власти Иркутской области сняли карантин после смерти сотрудницы противочумного института",
-      "url": "https://theins.ru/news/298056",
-      "tone": "neutral"
-    },
-    {
-      "date": "2026-10-08",
-      "source": "Медиазона",
-      "title": "Губернатор объявил о снятии карантина в Иркутской области из‑за смерти сотрудницы противочумного института",
-      "url": "https://zona.media/news/2026/10/08/karantin",
-      "tone": "neutral"
+      "source": "The Moscow Times",
+      "title": "Russia Says Checks Following Siberian Plague Lab Death Are Complete",
+      "url": "https://www.themoscowtimes.com/2026/10/08/russia-says-checks-following-siberian-plague-lab-death-are-complete-a93926",
+      "tone": "sober"
     }
   ],
   "context": [
@@ -675,6 +711,10 @@
       "done": false
     },
     {
+      "text": "Whether the Anti-Plague Institute's international conference, reported by IrCity on 6 October as going ahead, takes place as planned.",
+      "done": false
+    },
+    {
       "text": "The observation window ending for all contacts. Done: Rospotrebnadzor and the governor said on 8 October that observation of all contacts is complete.",
       "done": true
     },
@@ -692,21 +732,22 @@
     }
   ],
   "unknowns": [
-    "The cause of death is officially undetermined; Rospotrebnadzor's 8 October statements again did not name laboratory results for the deceased and have neither named nor excluded Yersinia pestis, while Governor Kobzev called the illness community-acquired pneumonia without naming a pathogen. Russia told WHO no plague case has been recorded, but WHO said on 7 October it still does not know the pathogen and cannot complete a risk assessment, and no WHO statement dated 8 or 9 October has been found.",
+    "The cause of death is officially undetermined; Rospotrebnadzor's 8 October statements did not name laboratory results for the deceased and have neither named nor excluded Yersinia pestis, while Governor Kobzev called the illness community-acquired pneumonia without naming a pathogen. Russia told WHO on 6 October there was no evidence pneumonic plague played a part, but WHO said on 7 October it still lacks the full picture and cannot complete a risk assessment; Bloomberg on 9 October restated that WHO has requested further information on the cause, the pathogen and the second-employee reports, and no WHO statement dated 8, 9 or 10 October has been found.",
     "The exposure (25 Sep), symptom onset (27 Sep) and hospitalisation (29 Sep or 1 Oct) dates rest on media and Telegram sourcing; no official timeline exists.",
     "Rospotrebnadzor and Kobzev say observation of all contacts is complete, but no absolute count of contacts, releases or discharges has been published; the media figure of about 200 isolated and the 197 / 189 base trace to unnamed sources repeated by regional and federal outlets.",
     "Rospotrebnadzor reports almost 5,000 laboratory tests among contacts with no dangerous pathogens but has not said which pathogens were tested for or how many people were tested, and has published no description of prophylaxis; the only named results are 2 COVID-19 and 2 rhinovirus cases.",
     "Rospotrebnadzor's 8 October denial of a second case refers to a contact of the deceased; whether any other institute employee was examined for pneumonia has not been addressed directly, and WHO has not said whether it accepts the denial.",
     "No statement from the Anti-Plague Institute itself, the regional health ministry or the federal Health Ministry; Rospotrebnadzor and Kobzev say commissions found no accidents at the institute, but the media-reported isolation of more than 60 staff has no official figure.",
-    "The content of the information Rospotrebnadzor says it sent to WHO under the IHR on 7 October has not been published, and WHO said the same day it lacked the full picture.",
+    "The content of the information Rospotrebnadzor says it sent to WHO under the IHR on 7 October has not been published, and WHO said the same day it lacked the full picture; NPR's 9 October analysis of Russia's IHR compliance reported no new detail.",
     "The scope of the Irkutsk city hospital measures is still not officially described: Kobzev said on 8 October that quarantines in medical facilities were lifted, while the regional government press service had said on 5 October that hospitals operated normally; no regional health ministry statement has been found.",
     "Whether the Shelekhov district hospital inpatient department has resumed admissions is confirmed only by Kobzev's general statement that quarantines in medical facilities are lifted; no hospital-level statement has been found.",
     "A criminal case is reported under Article 236 of the Criminal Code; the investigating body, the date it was opened and its current status are unconfirmed.",
     "The worker's name (Darya Shipilova) is media-sourced; Rospotrebnadzor gave her age as 28 and said she was vaccinated with immunity to especially dangerous infections, without naming the vaccine.",
     "The WHO risk grading (moderate to low for Irkutsk, low for Russia, very low for the WHO European Region) is reported from the 6 October briefing but has not been seen in a WHO document; the Russian claim that WHO sees no risk to residents, repeated by Kobzev on 8 October, is disputed by The Insider, Agentstvo and The Moscow Times.",
     "Which publications Roskomnadzor considers knowingly false, and whether it has demanded removals or blocked any outlet, has not been stated.",
-    "No WHO Disease Outbreak News, UKHSA, ProMED, CIDRAP or CDC item as of 9 Oct; ECDC published a news item on 6 Oct and no outcome of the 7 Oct EU Health Security Committee discussion has been found.",
-    "No BBC item found and no Reuters item confirmed with a URL; AP, CNN, NBC, CBC, CNBC, PBS, Euronews, Al Jazeera, Global News, UN News and a Bloomberg explainer exist."
+    "No WHO Disease Outbreak News, UKHSA, ProMED, CIDRAP or CDC item as of 10 Oct; ECDC's only item is its 6 Oct news item, no October CDTR covering Irkutsk was found, and no outcome of the 7 Oct EU Health Security Committee discussion has been found.",
+    "No BBC item found and no Reuters or AFP item confirmed with a URL, and none dated 9 or 10 Oct; AP (via ABC News, PBS and CBC), Bloomberg, NPR, Xinhua, CGTN, Bernama, CNN, NBC, CNBC, Euronews, Al Jazeera, Global News and UN News items exist.",
+    "Publish dates for the Kyiv Post, Bernama, Radio Svoboda, Current Time and Echo items are inferred from content and adjacent article IDs rather than visible datelines and should be treated as approximate."
   ],
   "sources": [
     {
