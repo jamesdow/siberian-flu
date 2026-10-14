@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
   "origin_label": "since the reported test-tube break on 25 Sep, which officials have not confirmed",
-  "method_note": "Figures were checked against 18 WebSearch queries run on 13 October in Russian and English (Rospotrebnadzor, Kobzev, Peskov, Popova, IrCity, IrkutskMedia, Baikal Daily, Interfax, RIA, TASS, Shelekhov hospital, the Article 236 case, WHO, ECDC, ProMED, CIDRAP), which returned nothing dated 9-13 October from Russian official or state sources and no new international monitor item; counts are therefore carried forward from WHO DON620 (10 October) and Rospotrebnadzor's 8 October statement. Seven verified-fact claims were cross-checked against RIA Novosti, Vedomosti, Kommersant, Interfax, IrCity and the ECDC and WHO listings; the Interfax 5,500 item was dated by adjacent item IDs and the Outbreak News Today item by search-result dates. All sources were seen through search-result snippets only, as full page fetches are blocked, so primary document wording remains unverified.",
+  "method_note": "Original pages cannot be fetched from this environment, so figures are checked through search results and relayed reporting: official statements relayed by a wire or regional outlet, or media figures carried by two or more outlets. On quiet days the update is a direct search rather than a full research pass.",
   "status": "contained",
-  "status_note": "As of 13 October the latest official figures remain those of WHO's Disease Outbreak News of 10 October, restating Russia's report of about 200 quarantined contacts, all asymptomatic through follow-up and negative for the high-threat pathogens tested, with no further linked cases, and the Russian positions remain those of 8 October; no official, state-media or regional statement dated 9-13 October has been found. The cause of death is still unconfirmed, no pathogen has been named or excluded, and WHO's information request to Russia remains open.",
+  "status_note": "Officials say the incident is over, and nothing has changed since 8 October: Rospotrebnadzor and Governor Kobzev said observation of all contacts was complete with nobody falling ill, the quarantine lifted and reports of a second case false. WHO's 10 October notice records about 200 contacts, all asymptomatic, but names the unconfirmed cause of death as the key uncertainty and is still waiting for Russia's laboratory details. No statement from either side has appeared since.",
   "counts": {
     "as_of": "2026-10-10",
     "confirmed": 0,
@@ -241,6 +241,18 @@
       "note": "No new figure; carried forward. Searches on 13 October (18 WebSearch queries) found no Russian official, state-media or regional statement dated 9-13 October, no Russian reply to WHO's DON620 information request, no second WHO Disease Outbreak News and no ECDC week 42 report (not yet due). The latest official figures remain WHO's DON of 10 October (about 200 quarantined contacts, all asymptomatic through follow-up, negative for the high-threat pathogens tested) and Rospotrebnadzor's 8 October statement (observation of all contacts complete, almost 5,000 laboratory tests with no dangerous pathogens found). New context only: the Interfax item carrying the 'more than 5,500 laboratory tests' variant is now dated 8 October by adjacent item IDs, so the 5,000 versus 5,500 wording question is a same-day discrepancy rather than a later update; a third-party tracker lists a ProMED post ('Plague - Russia (04): (IK) unclear documentation, WHO report') that could not be retrieved; the Outbreak News Today Substack summary is dated 5 October and restates positions of 4-5 October; the institute's international plague conference is confirmed for 21-22 October.",
       "note_short": "No new figure; the only additions are that the Interfax 'more than 5,500 tests' item is now dated 8 October, a ProMED post is listed by a third-party tracker but could not be retrieved, and the institute's conference on 21-22 October is confirmed.",
       "source_url": "https://ria.ru/20261008/rospotrebnadzor-2123146891.html"
+    },
+    {
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "date": "2026-10-14",
+      "note": "No new figure; carried forward. Five searches in English and Russian on 14 October found no Rospotrebnadzor, Health Ministry, governor or institute statement dated 9 to 14 October, no Russian reply to WHO's information request of 10 October, no further WHO Disease Outbreak News and no ProMED or ECDC item newer than those already recorded. The latest official positions remain Rospotrebnadzor's 8 October statement (observation of all contacts complete, quarantine lifted, second case denied, pneumonia of undetermined etiology, no dangerous pathogens in about 5,000 tests) and WHO's 10 October notice (about 200 contacts, all asymptomatic, cause of death unconfirmed, second-employee reports still being verified). Method today: direct search only, no workflow, since the figures have been flat since 8 October.",
+      "note_short": "No new figure; carried forward. No Russian or WHO statement dated 9 to 14 October was found.",
+      "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
     }
   ],
   "timeline": [
