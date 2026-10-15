@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
@@ -252,6 +252,18 @@
       "date": "2026-10-14",
       "note": "No new figure; carried forward. Five searches in English and Russian on 14 October found no Rospotrebnadzor, Health Ministry, governor or institute statement dated 9 to 14 October, no Russian reply to WHO's information request of 10 October, no further WHO Disease Outbreak News and no ProMED or ECDC item newer than those already recorded. The latest official positions remain Rospotrebnadzor's 8 October statement (observation of all contacts complete, quarantine lifted, second case denied, pneumonia of undetermined etiology, no dangerous pathogens in about 5,000 tests) and WHO's 10 October notice (about 200 contacts, all asymptomatic, cause of death unconfirmed, second-employee reports still being verified). Method today: direct search only, no workflow, since the figures have been flat since 8 October.",
       "note_short": "No new figure; carried forward. No Russian or WHO statement dated 9 to 14 October was found.",
+      "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
+    },
+    {
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "date": "2026-10-15",
+      "note": "No new figure; carried forward. Four searches in English and Russian on 15 October found no Rospotrebnadzor, Health Ministry, governor, institute or WHO statement dated 9 to 15 October, and ECDC's week 42 threats report has not yet been published. The latest official positions remain Rospotrebnadzor's 8 October statement (observation of all contacts complete, quarantine lifted, second case denied, pneumonia of undetermined etiology) and WHO's 10 October notice (about 200 contacts, all asymptomatic, cause of death unconfirmed, WHO's request for laboratory details open). Method today: direct search only.",
+      "note_short": "No new figure; carried forward. Seventh flat day: no Russian or WHO statement since 10 October, ECDC week 42 report not yet out.",
       "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
     }
   ],
