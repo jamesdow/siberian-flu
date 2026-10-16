@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
@@ -265,6 +265,18 @@
       "note": "No new figure; carried forward. Four searches in English and Russian on 15 October found no Rospotrebnadzor, Health Ministry, governor, institute or WHO statement dated 9 to 15 October, and ECDC's week 42 threats report has not yet been published. The latest official positions remain Rospotrebnadzor's 8 October statement (observation of all contacts complete, quarantine lifted, second case denied, pneumonia of undetermined etiology) and WHO's 10 October notice (about 200 contacts, all asymptomatic, cause of death unconfirmed, WHO's request for laboratory details open). Method today: direct search only.",
       "note_short": "No new figure; carried forward. Seventh flat day: no Russian or WHO statement since 10 October, ECDC week 42 report not yet out.",
       "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
+    },
+    {
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "date": "2026-10-16",
+      "note": "No new figure; carried forward. Five searches in English and Russian on 16 October found no Rospotrebnadzor, Health Ministry, governor or WHO statement dated 9 to 16 October, and ECDC's week 42 report was not yet published. The only new item is procurement news: Daily Storm and Rambler report, citing public procurement records, that the Anti-Plague Institute has put out a tender of about 1.16 million roubles for a video surveillance system covering staff and visitors, following an earlier purchase of protective cabinets; the institute itself has not linked the tender to the death. Method today: direct search only.",
+      "note_short": "No new figure; carried forward. Only new item: the institute has tendered for a staff and visitor video surveillance system, per procurement records.",
+      "source_url": "https://dailystorm.ru/detali/v-irkutskom-protivochumnom-institute-posle-smerti-sotrudnicy-budut-po-kameram-sledit-za-personalom-i-posetitelyami"
     }
   ],
   "timeline": [
@@ -663,9 +675,22 @@
       "text": "Kyiv Post, in a Reuters-based report, restated WHO's position that the cause of death cannot yet be determined, no plague cases were registered, no evidence of transmission was found, Rospotrebnadzor's tests on the deceased and contacts were negative for the high-consequence pathogens tested and no contacts have developed symptoms.",
       "source_name": "Kyiv Post",
       "source_url": "https://www.kyivpost.com/post/86733"
+    },
+    {
+      "date": "2026-10-15",
+      "text": "Daily Storm and Rambler report, citing public procurement records, that the Irkutsk Anti-Plague Institute has tendered for a video surveillance system of about 1.16 million roubles to record the movements of staff, visitors and vehicles and detect unauthorised entry, after an earlier purchase of protective cabinets. The institute has not linked the purchase to the death.",
+      "source_name": "Daily Storm",
+      "source_url": "https://dailystorm.ru/detali/v-irkutskom-protivochumnom-institute-posle-smerti-sotrudnicy-budut-po-kameram-sledit-za-personalom-i-posetitelyami"
     }
   ],
   "headlines": [
+    {
+      "date": "2026-10-15",
+      "source": "Daily Storm",
+      "title": "В Иркутском противочумном институте после смерти сотрудницы будут по камерам следить за персоналом и посетителями",
+      "url": "https://dailystorm.ru/detali/v-irkutskom-protivochumnom-institute-posle-smerti-sotrudnicy-budut-po-kameram-sledit-za-personalom-i-posetitelyami",
+      "tone": "neutral"
+    },
     {
       "date": "2026-10-11",
       "source": "Kyiv Post",
@@ -756,13 +781,6 @@
       "title": "Russia Finds No Plague or Other Pathogens in Siberia Lab Death",
       "url": "https://www.bloomberg.com/news/articles/2026-10-09/russia-ends-irkutsk-health-measures-as-tests-find-no-pathogens",
       "tone": "sober"
-    },
-    {
-      "date": "2026-10-09",
-      "source": "NPR",
-      "title": "Did Russia play by the rules in reporting lab worker's death?",
-      "url": "https://www.npr.org/2026/10/09/g-s1-147295/russia-lab-death-pneumonia-plague",
-      "tone": "neutral"
     }
   ],
   "context": [
