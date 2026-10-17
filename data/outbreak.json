@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
@@ -277,6 +277,18 @@
       "note": "No new figure; carried forward. Five searches in English and Russian on 16 October found no Rospotrebnadzor, Health Ministry, governor or WHO statement dated 9 to 16 October, and ECDC's week 42 report was not yet published. The only new item is procurement news: Daily Storm and Rambler report, citing public procurement records, that the Anti-Plague Institute has put out a tender of about 1.16 million roubles for a video surveillance system covering staff and visitors, following an earlier purchase of protective cabinets; the institute itself has not linked the tender to the death. Method today: direct search only.",
       "note_short": "No new figure; carried forward. Only new item: the institute has tendered for a staff and visitor video surveillance system, per procurement records.",
       "source_url": "https://dailystorm.ru/detali/v-irkutskom-protivochumnom-institute-posle-smerti-sotrudnicy-budut-po-kameram-sledit-za-personalom-i-posetitelyami"
+    },
+    {
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "date": "2026-10-17",
+      "note": "No new figure; carried forward. Four searches in English and Russian on 17 October found no Rospotrebnadzor, Health Ministry, governor, institute or WHO statement dated 9 to 17 October. ECDC published its week 42 Communicable Disease Threats Report (10 to 16 October) on 16 October, and its topic list again includes pneumonia of unknown aetiology; the item's text could not be retrieved from this environment, so whether it adds anything beyond the week 41 entry (no secondary cases, WHO's information request open) is unverified. Method today: direct search only.",
+      "note_short": "No new figure; carried forward. ECDC's week 42 report is out and still lists the case; its text could not be retrieved, and no Russian or WHO statement since 10 October.",
+      "source_url": "https://www.ecdc.europa.eu/en/publications-data/communicable-disease-threats-report-10-16-october-week-42"
     }
   ],
   "timeline": [
@@ -685,6 +697,13 @@
   ],
   "headlines": [
     {
+      "date": "2026-10-16",
+      "source": "ECDC",
+      "title": "Communicable disease threats report, 10 - 16 October, week 42",
+      "url": "https://www.ecdc.europa.eu/en/publications-data/communicable-disease-threats-report-10-16-october-week-42",
+      "tone": "sober"
+    },
+    {
       "date": "2026-10-15",
       "source": "Daily Storm",
       "title": "В Иркутском противочумном институте после смерти сотрудницы будут по камерам следить за персоналом и посетителями",
@@ -773,13 +792,6 @@
       "source": "Xinhua",
       "title": "Russia lifts preventive measures in Irkutsk after pneumonia death",
       "url": "https://english.news.cn/20261009/3407739421d34a0582d0b1383854f8f3/c.html",
-      "tone": "sober"
-    },
-    {
-      "date": "2026-10-09",
-      "source": "Bloomberg",
-      "title": "Russia Finds No Plague or Other Pathogens in Siberia Lab Death",
-      "url": "https://www.bloomberg.com/news/articles/2026-10-09/russia-ends-irkutsk-health-measures-as-tests-find-no-pathogens",
       "tone": "sober"
     }
   ],
