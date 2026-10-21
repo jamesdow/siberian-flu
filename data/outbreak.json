@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "title": "Irkutsk Plague Watch",
   "pathogen": "Unconfirmed — officially pneumonia of undetermined etiology; Yersinia pestis named by the head of Buryatia (later amended to 'possibly') and suspected in media reports; Irkutsk officials speak only of an especially dangerous infection.",
   "pathogen_note": "Yersinia pestis is a bacterium, not a virus, and it responds to antibiotics when treatment starts early; some early reports used the word virus loosely.",
@@ -324,6 +324,18 @@
       "date": "2026-10-20",
       "note": "No new figure; carried forward. Five searches in English and Russian on 20 October found no Rospotrebnadzor, Health Ministry, governor, institute or WHO statement dated 9 to 20 October. The newest item in any result set remains the 15 October procurement report on the institute's video surveillance tender. The institute's XVIII CIS interstate conference on plague control opens tomorrow, 21 October, and runs to 22 October; no cancellation or postponement found. Method today: direct search only.",
       "note_short": "No new figure; carried forward. Twelfth flat day; the institute's conference opens tomorrow, 21 October.",
+      "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
+    },
+    {
+      "deaths": 1,
+      "confirmed": 0,
+      "suspected": 1,
+      "under_observation": 0,
+      "hospitalized": 0,
+      "symptomatic": 0,
+      "date": "2026-10-21",
+      "note": "No new figure; carried forward. Five searches in English and Russian on 21 October found no Rospotrebnadzor, Health Ministry, governor, institute or WHO statement dated 9 to 21 October. The institute's XVIII CIS interstate conference on plague control is scheduled to open today at the Irkutsk hotel on Gagarin boulevard, but at search time (about 14:00 Irkutsk) no report of the opening, any remarks on the death, or a cancellation had appeared; the conference site conf2026-irkutsk.ru still shows only the programme. Method today: direct search only.",
+      "note_short": "No new figure; carried forward. Thirteenth flat day; the institute's conference was due to open today, with no report of it found yet.",
       "source_url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620"
     }
   ],
@@ -864,6 +876,10 @@
     }
   ],
   "watch": [
+    {
+      "text": "Any statement on the death or on laboratory safety made at the institute's CIS plague-control conference (21 to 22 October, Irkutsk), which was scheduled to go ahead; nothing reported as of 21 October.",
+      "done": false
+    },
     {
       "text": "Rospotrebnadzor or the Health Ministry naming the cause of death, confirming or ruling out Yersinia pestis; WHO's DON of 10 October and AP's 10 October report both say the cause is still unknown. Nothing new as of 13 October.",
       "done": false
